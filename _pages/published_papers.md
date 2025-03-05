@@ -16,3 +16,8 @@ permalink: /publications_deprecated/
 ## Journals
 - Mun, J., Kim, S., Kim, M. J., Ryu, J., Kim, S., & Chung, M. (2022). Automatic detection and severity prediction of chronic kidney disease using machine learning classifiers. Phonetics and Speech Sciences, 14(4), 45-56.
 - Mun, J., Kim, S., & Chung, M. (2021). Acoustic analysis of Korean affricates produced by dysarthric speakers with cerebral palsy. Phonetics and Speech Sciences, 13(2), 45-55.
+
+## In Preparation
+- Mun, J., Kim, S., Chung, M. (2025). Acoustic Analysis of Chronic Kidney Disease Speech: Towards Interpretable Machine Learning for Non-Invasive Detection and Assessment
+- Mun, J., Kim, S., Chung, M. (2025). Speech-Based Automatic Chronic Kidney Disease Diagnosis via Transformer Fusion of Glottal and Spectrogram Features. Submitted to Interspeech 2025.
+- Mun, J., Kim, S., Chung, M. (2025). A Cascaded Multimodal Framework for Automatic Social Communication Severity Assessment in Children with Autism Spectrum Disorder. Submitted to Interspeech 2025.
