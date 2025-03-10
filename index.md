@@ -3,7 +3,7 @@ layout: default
 title: Home
 ---
 
-# Jihyun Mun
+# Jihyun Mun <[http://example.com/](https://github.com/jihyunmun?tab=repositories)>
 
 I am a researcher focused on the analysis of pathological and atypical speech, and the development of automated detection and assessment tools.
 My goal is to ensure that individuals facing communication challenges can equally benefit from advancements in modern technology.
