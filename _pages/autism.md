@@ -23,15 +23,15 @@ This project aimed to enhance communication in children with autism by developin
     <a href="/assets/pdfs/2025_interspeech_asd.pdf" target="_blank">🔗</a>
   </li>
   <li>
-    End-to-End Framework for ASD Severity Prediction (Interspeech 2024)
+    Developing an End-to-End Framework for Predicting the Social Communication Severity Scores of Children with Autism Spectrum Disorder (Interspeech 2024)
     <a href="/assets/pdfs/2024_interspeech.pdf" target="_blank">🔗</a>
   </li>
   <li>
-    ASR and Assessment Systems for Digital Therapeutics (ICCHP 2024)
+    Automatic Speech Recognition and Assessment Systems Incorporated into Digital Therapeutics for Children with Autism Spectrum Disorder (ICCHP 2024)
     <a href="/assets/pdfs/2024_icchp.pdf" target="_blank">🔗</a>
   </li>
   <li>
-    Speech Corpus for Korean Children with ASD (LREC-Coling 2024)
+    Speech Corpus for Korean Children with Autism Spectrum Disorder: Towards Automatic Assessment Systems (LREC-Coling 2024)
     <a href="/assets/pdfs/2024_lrec.pdf" target="_blank">🔗</a>
   </li>
 </ul>
