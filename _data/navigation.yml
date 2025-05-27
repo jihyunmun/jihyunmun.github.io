@@ -10,9 +10,9 @@
   url: /patents/
 - title: Education
   url: /education/
-- title: More
-  sublinks:
-    - title: FAQ
-      url: /faq/
-    - title: Docs
-      url: /docs/
+# - title: More
+#   sublinks:
+#     - title: FAQ
+#       url: /faq/
+#     - title: Docs
+#       url: /docs/
