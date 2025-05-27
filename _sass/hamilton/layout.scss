@@ -192,12 +192,11 @@
  */
 .site-body {
   display: grid;
-  grid-template-columns: calc(#{$content-width} * 0.24) 1fr;
+  grid-template-columns: 240px 1fr;
   overflow: hidden;
-  min-height: 100vh;
 
   @include media-query($on-medium) {
-    grid-template-columns: calc(#{$content-width} * 0.18) 1fr;
+    grid-template-columns: 200px 1fr;
   }
 
   @include media-query($on-small) {
@@ -211,9 +210,12 @@
 .site-sidebar {
   padding: $spacing-unit;
   border-right: 1px solid;
+  max-width: 240px;
+  width: 100%;
   @include relative-font-size(0.8);
 
   @include media-query($on-medium) {
+    max-width: 200px;
     padding: $spacing-unit / 2;
     @include relative-font-size(0.6);
   }
