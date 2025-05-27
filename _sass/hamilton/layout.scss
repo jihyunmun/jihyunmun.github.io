@@ -194,6 +194,7 @@
   display: grid;
   grid-template-columns: calc(#{$content-width} * 0.24) 1fr;
   overflow: hidden;
+  min-height: 100vh;
 
   @include media-query($on-medium) {
     grid-template-columns: calc(#{$content-width} * 0.18) 1fr;
@@ -333,6 +334,7 @@ ul.social-icons {
 .site-main {
   flex: 1 0 auto;
   overflow-y: scroll;
+  min-height: 100vh;
 
   // Hide scrollbar for IE, Edge and Firefox
   -ms-overflow-style: none;  // IE and Edge
