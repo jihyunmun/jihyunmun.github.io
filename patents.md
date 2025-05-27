@@ -8,7 +8,6 @@ permalink: /patents/
 
 <h3>
   Automated System for Predicting Social Communication Severity Scores of Children with ASD
-  <a href="https://example.com/interspeech2024-paper-link" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/patent.png" alt="ASD Severity Prediction Patent">
 <ul>
