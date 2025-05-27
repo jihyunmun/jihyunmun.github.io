@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Digital Therapeutics for Autism"
-permalink: /projects/autism/
+permalink: /autism/
 ---
 
 ## Development of Digital Therapeutics to Improve Communication Skills of Autistic Patients
