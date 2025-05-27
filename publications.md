@@ -7,7 +7,7 @@ permalink: /publications/
 <h2>Conferences</h2>
 
 <h3>
-  Speech-Based Automatic CKD Diagnosis via Transformer Fusion (Interspeech 2025)
+  Speech-Based Automatic Chronic Kidney Disease Diagnosis via Transformer Fusion of Glottal and Spectrogram Features (Interspeech 2025)
   <a href="/assets/pdfs/2025_interspeech_ckd.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2025_interspeech_ckd.png" alt="CKD model">
@@ -17,7 +17,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  Cascaded Multimodal Framework for ASD Severity Estimation (Interspeech 2025)
+  A Cascaded Multimodal Framework for Automatic Social Communication Severity Assessment in Children with Autism Spectrum Disorder (Interspeech 2025)
   <a href="/assets/pdfs/2025_interspeech_asd.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2025_interspeech_asd.png" alt="ASD model">
@@ -28,7 +28,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  End-to-End Framework for ASD Severity Prediction (Interspeech 2024)
+  Developing an End-to-End Framework for Predicting the Social Communication Severity Scores of Children with Autism Spectrum Disorder (Interspeech 2024)
   <a href="/assets/pdfs/2024_interspeech.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2024_interspeech.png" alt="ASD severity model">
@@ -38,7 +38,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  ASR and Assessment Systems for Digital Therapeutics (ICCHP 2024)
+  Automatic Speech Recognition and Assessment Systems Incorporated into Digital Therapeutics for Children with Autism Spectrum Disorder (ICCHP 2024)
   <a href="/assets/pdfs/2024_icchp.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2024_icchp.png" alt="ICCHP model">
@@ -48,7 +48,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  Speech Corpus for Korean Children with ASD (LREC-Coling 2024)
+  Speech Corpus for Korean Children with Autism Spectrum Disorder: Towards Automatic Assessment Systems (LREC-Coling 2024)
   <a href="/assets/pdfs/2024_lrec.pdf" target="_blank">🔗</a>
 </h3>
 <ul>
@@ -57,7 +57,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  Glottal Analysis for CKD Detection (Interspeech 2023)
+  An Analysis of Glottal Features of Chronic Kidney Disease Speech and Its Application to CKD Detection (Interspeech 2023)
   <a href="/assets/pdfs/2023_interspeech.pdf" target="_blank">🔗</a>
 </h3>
 <ul>
@@ -66,7 +66,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  CKD Speech Corpus Construction (COCOSDA 2022)
+  A SPEECH CORPUS FOR CHRONIC KIDNEY DISEASE (COCOSDA 2022)
   <a href="/assets/pdfs/2022_cocosda.pdf" target="_blank">🔗</a>
 </h3>
 <ul>
@@ -79,7 +79,7 @@ permalink: /publications/
 <h2>Journals</h2>
 
 <h3>
-  Automatic Detection and Severity Prediction of CKD (PSS, 2022)
+  Automatic detection and severity prediction of chronic kidney disease using machine learning classifiers (PSS, 2022)
   <a href="/assets/pdfs/2022_phonetics-and-sciences.pdf" target="_blank">🔗</a>
 </h3>
 <ul>
@@ -88,7 +88,7 @@ permalink: /publications/
 </ul>
 
 <h3>
-  Acoustic Analysis of Affricates in Dysarthric Speech (PSS, 2021)
+  Acoustic analysis of Korean affricates produced by dysarthric speakers with cerebral palsy (PSS, 2021)
   <a href="/assets/pdfs/2021_phonetics-and-sciences.pdf" target="_blank">🔗</a>
 </h3>
 <ul>
@@ -100,7 +100,7 @@ permalink: /publications/
 <h2>In Preparation</h2>
 
 <h3>
-  Speech-Based CKD Diagnosis with Interpretable Modeling (2025)
+  Speech-Based Diagnosis of Chronic Kidney Disease: Clinically Validated Acoustic Features and Interpretable Modeling (2025)
 </h3>
 <ul>
   <li>Conducts a comprehensive acoustic analysis of CKD speech across diverse stimuli</li>
