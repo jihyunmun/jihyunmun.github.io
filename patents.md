@@ -4,8 +4,6 @@ title: "Patents"
 permalink: /patents/
 ---
 
-<h2>Patents</h2>
-
 <h3>
   Automated System for Predicting Social Communication Severity Scores of Children with ASD
 </h3>
