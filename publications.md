@@ -11,67 +11,68 @@ permalink: /publications/
   <a href="/assets/pdfs/2025_interspeech_ckd.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2025_interspeech_ckd.png" alt="CKD model">
-<p>
-  Proposes a multimodal fusion model combining glottal and spectrogram features.
-  Employs explainable AI techniques to interpret model predictions.
-</p>
+<ul>
+  <li>Proposes a multimodal fusion model combining glottal and spectrogram features</li>
+  <li>Employs explainable AI techniques to interpret model predictions</li>
+</ul>
 
 <h3>
   Cascaded Multimodal Framework for ASD Severity Estimation (Interspeech 2025)
   <a href="/assets/pdfs/2025_interspeech_asd.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2025_interspeech_asd.png" alt="ASD model">
-<p>
-  Introduces a cascaded multimodal model for ASD severity estimation.
-  Integrates speech foundation models for segmental and suprasegmental feature extraction,
-  and utilizes an ASD-specific ASR system for automatic transcription.
-</p>
+<ul>
+  <li>Introduces a cascaded multimodal model for ASD severity estimation</li>
+  <li>Incorporates segmental and suprasegmental speech features via foundation models</li>
+  <li>Utilizes an ASD-specialized ASR system for transcription</li>
+</ul>
 
 <h3>
   End-to-End Framework for ASD Severity Prediction (Interspeech 2024)
   <a href="/assets/pdfs/2024_interspeech.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2024_interspeech.png" alt="ASD severity model">
-<p>
-  Predicts ASD severity using transcribed speech from an ASR model.
-  Evaluates tuning methods including fine-tuning, prompt tuning, and parameter-efficient learning.
-</p>
+<ul>
+  <li>Predicts ASD severity using transcribed speech from an ASR model</li>
+  <li>Compares tuning methods including fine-tuning, prompt tuning, and parameter-efficient learning</li>
+</ul>
 
 <h3>
   ASR and Assessment Systems for Digital Therapeutics (ICCHP 2024)
   <a href="/assets/pdfs/2024_icchp.pdf" target="_blank">🔗</a>
 </h3>
 <img src="/assets/images/2024_icchp.png" alt="ICCHP model">
-<p>
-  Develops ASR and assessment systems for integration into digital therapeutics for children with ASD.
-  Covers pronunciation proficiency and social communication metrics.
-</p>
+<ul>
+  <li>Develops ASR and automatic assessment tools for use in digital therapeutics</li>
+  <li>Targets pronunciation proficiency and social communication assessment</li>
+</ul>
 
 <h3>
   Speech Corpus for Korean Children with ASD (LREC-Coling 2024)
   <a href="/assets/pdfs/2024_lrec.pdf" target="_blank">🔗</a>
 </h3>
-<p>
-  Constructs a speech corpus for Korean children with ASD.
-  Provides acoustic analyses on pronunciation and social communication aspects.
-</p>
+<ul>
+  <li>Constructs a speech corpus for Korean children with ASD</li>
+  <li>Provides acoustic analyses of pronunciation and communication traits</li>
+</ul>
 
 <h3>
   Glottal Analysis for CKD Detection (Interspeech 2023)
   <a href="/assets/pdfs/2023_interspeech.pdf" target="_blank">🔗</a>
 </h3>
-<p>
-  Investigates glottal source characteristics in CKD speech.
-  Applies glottal features to automatic CKD classification.
-</p>
+<ul>
+  <li>Investigates glottal source characteristics in CKD speech</li>
+  <li>Demonstrates utility of glottal features for CKD classification</li>
+</ul>
 
 <h3>
   CKD Speech Corpus Construction (COCOSDA 2022)
   <a href="/assets/pdfs/2022_cocosda.pdf" target="_blank">🔗</a>
 </h3>
-<p>
-  Presents a speech corpus for CKD patients and conducts acoustic comparison with non-CKD speech.
-</p>
+<ul>
+  <li>Introduces a speech corpus of CKD patients</li>
+  <li>Analyzes acoustic differences between CKD and non-CKD speech</li>
+</ul>
 
 ---
 
@@ -81,17 +82,18 @@ permalink: /publications/
   Automatic Detection and Severity Prediction of CKD (PSS, 2022)
   <a href="/assets/pdfs/2022_phonetics-and-sciences.pdf" target="_blank">🔗</a>
 </h3>
-<p>
-  Applies machine learning classifiers to detect CKD and estimate severity using knowledge-driven acoustic features.
-</p>
+<ul>
+  <li>Applies machine learning classifiers to detect and stage CKD</li>
+  <li>Uses knowledge-driven acoustic features derived from speech</li>
+</ul>
 
 <h3>
   Acoustic Analysis of Affricates in Dysarthric Speech (PSS, 2021)
   <a href="/assets/pdfs/2021_phonetics-and-sciences.pdf" target="_blank">🔗</a>
 </h3>
-<p>
-  Analyzes Korean affricate production in dysarthric speech by individuals with cerebral palsy.
-</p>
+<ul>
+  <li>Performs acoustic analysis of Korean affricates produced by speakers with cerebral palsy</li>
+</ul>
 
 ---
 
@@ -100,8 +102,8 @@ permalink: /publications/
 <h3>
   Speech-Based CKD Diagnosis with Interpretable Modeling (2025)
 </h3>
-<p>
-  Conducts comprehensive acoustic analysis of CKD speech across various stimuli.
-  Builds classification and ordinal regression models for automatic CKD detection and staging.
-  Applies SHAP-based analysis for model interpretability.
-</p>
+<ul>
+  <li>Conducts a comprehensive acoustic analysis of CKD speech across diverse stimuli</li>
+  <li>Develops classification and ordinal regression models for CKD detection and staging</li>
+  <li>Applies SHAP-based interpretability to highlight salient acoustic features</li>
+</ul>
