@@ -19,8 +19,9 @@ A key component of this work also involves designing speech recognition systems 
 
 I envision a more inclusive world—one in which everyone can communicate comfortably—and aspire to build speech technologies that truly benefit people in equitable and inclusive ways.
 
+---
 
-## Education
+## Academic Background
 
 ### Integrated M.A./Ph.D., Linguistics  
 **Seoul National University**  
