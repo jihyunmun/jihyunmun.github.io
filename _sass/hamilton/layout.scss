@@ -192,11 +192,11 @@
  */
 .site-body {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: calc(#{$content-width} * 0.24) 1fr;
   overflow: hidden;
 
   @include media-query($on-medium) {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: calc(#{$content-width} * 0.18) 1fr;
   }
 
   @include media-query($on-small) {
@@ -210,12 +210,9 @@
 .site-sidebar {
   padding: $spacing-unit;
   border-right: 1px solid;
-  max-width: 240px;
-  width: 100%;
   @include relative-font-size(0.8);
 
   @include media-query($on-medium) {
-    max-width: 200px;
     padding: $spacing-unit / 2;
     @include relative-font-size(0.6);
   }
@@ -336,7 +333,6 @@ ul.social-icons {
 .site-main {
   flex: 1 0 auto;
   overflow-y: scroll;
-  min-height: 100vh;
 
   // Hide scrollbar for IE, Edge and Firefox
   -ms-overflow-style: none;  // IE and Edge
