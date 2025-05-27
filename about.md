@@ -18,3 +18,22 @@ To ensure clinical relevance and practical utility, I place strong emphasis on m
 A key component of this work also involves designing speech recognition systems that are tailored specifically to atypical speech.
 
 I envision a more inclusive world—one in which everyone can communicate comfortably—and aspire to build speech technologies that truly benefit people in equitable and inclusive ways.
+
+
+## Education
+
+### Integrated M.A./Ph.D., Linguistics  
+**Seoul National University**  
+*Mar 2021 – Aug 2025 (expected)*
+
+<hr />
+
+### B.A., Mechanical Engineering  
+### B.A., Linguistics (Double Major)  
+**Seoul National University**  
+*Mar 2015 – Feb 2021*
+
+<hr />
+
+### Anyang Foreign Language High School (Chinese major)  
+*Mar 2012 – Feb 2015*
