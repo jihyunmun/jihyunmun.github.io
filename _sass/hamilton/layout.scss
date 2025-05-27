@@ -177,6 +177,16 @@
   }
 }
 
+.site-nav a.current {
+  text-decoration: underline !important;
+  font-weight: bold;
+  color: inherit;
+}
+
+.site-nav a.current:hover {
+  text-decoration: none;
+}
+
 /**
  * Site body
  */
