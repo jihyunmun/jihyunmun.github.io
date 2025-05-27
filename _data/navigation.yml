@@ -1,11 +1,15 @@
 - title: About
   url: /about/
-- title: Years
-  url: /years/
-- title: Categories
-  url: /categories/
-- title: Tags
-  url: /tags/
+- title: Research Area
+  url: /research/
+- title: Publications
+  url: /publications/
+- title: Projects
+  url: /projects/
+- title: Patents
+  url: /patents/
+- title: Education
+  url: /education/
 - title: More
   sublinks:
     - title: FAQ
