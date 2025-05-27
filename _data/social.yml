@@ -5,3 +5,7 @@
 - title: GitHub
   url: https://github.com/jihyunmun?tab=repositories
   icon: fab fa-github
+
+- title: Email
+  url: mailto:jhhh_1202@snu.ac.kr
+  icon: fas fa-envelope
