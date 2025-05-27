@@ -2,7 +2,7 @@
 # description: A minimal and beautiful Jekyll theme best for writing and note-taking.
 skin: midnight
 author: Jihyun Mun
-avatar: /portrait.jpg
+avatar: /assets/images/portrait.jpg
 email: jhhh_1202@snu.ac.kr
 
 plugins:
