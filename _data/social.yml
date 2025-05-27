@@ -1,6 +1,7 @@
-- title: Twitter
-  url: https://twitter.com/ngzhio
-  icon: fab fa-twitter
+- title: LinkedIn
+  url: https://www.linkedin.com/in/jihyun-mun-b65a58142/
+  icon: fab fa-linkedin
+
 - title: GitHub
-  url: https://github.com/ngzhio/jekyll-theme-hamilton
+  url: https://github.com/jihyunmun?tab=repositories
   icon: fab fa-github
