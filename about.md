@@ -25,16 +25,11 @@ I envision a more inclusive world—one in which everyone can communicate comfor
 
 ### Integrated M.A./Ph.D., Linguistics  
 **Seoul National University**  
-*Mar 2021 – Aug 2025 (expected)*
+*Mar 2021 – Aug 2025*
 
-<hr />
-
-### B.A., Mechanical Engineering  
-### B.A., Linguistics (Double Major)  
+### B.A., Mechanical Engineering & Linguistics (Double Major) 
 **Seoul National University**  
 *Mar 2015 – Feb 2021*
-
-<hr />
 
 ### Anyang Foreign Language High School (Chinese major)  
 *Mar 2012 – Feb 2015*
