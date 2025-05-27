@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Speech-Based Detection and Severity Assesment of Chronic Kidney Disease"
-permalink: /projects/ckd/
+permalink: /ckd/
 ---
 
 ## Construction of a Cohort through Voice Banking of Chronic Kidney Disease Patients and Analysis of Voice Characteristics according to Renal Function
