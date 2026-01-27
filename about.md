@@ -4,20 +4,18 @@ title: About
 permalink: /about/
 ---
 
-My name is Jihyun Mun.  
-I am currently pursuing an integrated M.A.–Ph.D. in Linguistics at Seoul National University, where I work in the Spoken Language Processing Lab.  
-Prior to this, I completed a B.A. in Mechanical Engineering and a double major in Linguistics, also at Seoul National University.
+My name is Jihyun Mun.
+I hold a Ph.D. in Linguistics from Seoul National University, where I worked in the Spoken Language Processing Lab.
+I am currently a Postdoctoral Researcher at Télécom SudParis (Institut Mines-Télécom).
 
-I am actively seeking a postdoctoral position. Please feel free to contact me!
 
 ---
 
-My research centers on **atypical speech—spoken language produced by individuals with disabilities or disorders**. 
-I conduct acoustic and linguistic analyses of such speech to better understand its characteristics, and I develop models for the automatic detection and severity estimation of the underlying conditions. 
-To ensure clinical relevance and practical utility, I place strong emphasis on model interpretability and the creation of reliable, non-invasive, and accessible tools for auxiliary diagnosis and screening.
-A key component of this work also involves designing speech recognition systems that are tailored specifically to atypical speech.
+My research focuses on atypical human communication signals, with a primary emphasis on speech and a growing focus on handwriting produced by individuals with disabilities or neurological and developmental disorders.
+I analyze these signals to understand their structural and temporal characteristics and develop models for automatic detection and severity estimation of underlying conditions.
+My work emphasizes **interpretability, reliability, and non-invasive assessment**, with the goal of building **accessible and clinically meaningful** tools for screening and auxiliary diagnosis.
 
-I envision a more inclusive world—one in which everyone can communicate comfortably—and aspire to build speech technologies that truly benefit people in equitable and inclusive ways.
+I aspire to build inclusive, human-centered AI technologies that support equitable communication for everyone.
 
 ---
 
