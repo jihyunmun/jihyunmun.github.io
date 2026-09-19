@@ -1,67 +1,105 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img"
-     aria-label="A child's speech is transcribed by an adapted recogniser, then a language model adapted in one of three ways — full fine-tuning, prompt tuning, or parameter-efficient adaptation — predicts a social communication severity score.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 372" role="img"
+     aria-label="Four ways to adapt a pretrained language model, compared by what actually gets trained. Full fine-tuning updates every layer. Prompt tuning trains only soft prompt vectors at the input. P-tuning inserts continuous prompts at every layer. LoRA trains small low-rank adapters inside each layer. In the last three the pretrained weights stay frozen.">
   <style>
-    .lbl  { font: 11px "IBM Plex Mono", monospace; fill: #5B6066; letter-spacing: .03em; }
-    .dim  { font: 10px "IBM Plex Mono", monospace; fill: #8A9098; letter-spacing: .04em; }
-    .box  { fill: none; stroke: #DBDDD6; }
-    .out  { fill: #E3E7F6; stroke: #2A3C8F; }
-    .outt { font: 11px "IBM Plex Mono", monospace; fill: #2A3C8F; letter-spacing: .03em; }
-    .arr  { stroke: #8A9098; fill: none; stroke-width: 1.1; }
-    @media (prefers-color-scheme: dark) {
-      .lbl  { fill: #9BA1A8; }
-      .dim  { fill: #6E747C; }
-      .box  { stroke: #2A2E35; }
-      .out  { fill: #1D2338; stroke: #92A6F2; }
-      .outt { fill: #92A6F2; }
-      .arr  { stroke: #6E747C; }
-    }
+    .ttl  { font: 600 13px "IBM Plex Sans", system-ui, sans-serif; fill: #15171B; }
+    .sub  { font: 11.5px "IBM Plex Sans", system-ui, sans-serif; fill: #5B6066; }
+    .lbl  { font: 10px "IBM Plex Mono", monospace; fill: #8A9098; letter-spacing: .06em; }
+    .frozen  { fill: none; stroke: #C6C9C1; }
+    .trained { fill: #2A3C8F; stroke: #2A3C8F; }
+    .tint    { fill: #E3E7F6; stroke: #2A3C8F; }
+    .rule    { stroke: #DBDDD6; }
   </style>
 
-  <text class="dim" x="24" y="28">CHILD SPEECH → SEVERITY SCORE</text>
+  <text class="lbl" x="28" y="26">FOUR WAYS TO ADAPT ONE PRETRAINED LANGUAGE MODEL</text>
+  <text class="lbl" x="28" y="352">FILLED = TRAINED</text>
+  <text class="lbl" x="200" y="352">OUTLINE = FROZEN PRETRAINED WEIGHTS</text>
+  <line class="rule" x1="28" y1="326" x2="952" y2="326"/>
 
-  <!-- stage 1 -->
-  <rect class="box" x="24" y="128" width="104" height="40" rx="2"/>
-  <text class="lbl" x="76" y="144" text-anchor="middle">adapted</text>
-  <text class="lbl" x="76" y="158" text-anchor="middle">recogniser</text>
-
-  <path class="arr" d="M128 148 L 160 148"/>
-  <path class="arr" d="M154 144 L 160 148 L 154 152"/>
-
-  <!-- stage 2 -->
-  <rect class="box" x="160" y="128" width="96" height="40" rx="2"/>
-  <text class="lbl" x="208" y="152" text-anchor="middle">transcript</text>
-
-  <!-- fan out -->
-  <g class="arr">
-    <path d="M256 148 C 286 148, 290 72,  320 72"/>
-    <path d="M256 148 C 286 148, 290 148, 320 148"/>
-    <path d="M256 148 C 286 148, 290 224, 320 224"/>
+  <!-- ============ 1. full fine-tuning ============ -->
+  <text class="ttl" x="28" y="60">Full fine-tuning</text>
+  <g>
+    <rect class="trained" x="28" y="76"  width="176" height="26" rx="2"/>
+    <rect class="trained" x="28" y="110" width="176" height="26" rx="2"/>
+    <rect class="trained" x="28" y="144" width="176" height="26" rx="2"/>
+    <rect class="trained" x="28" y="178" width="176" height="26" rx="2"/>
   </g>
-
-  <text class="dim" x="320" y="44">THREE ADAPTATION REGIMES, ONE TRANSCRIPT SET</text>
-
-  <!-- three regimes -->
-  <rect class="box" x="320" y="54"  width="164" height="36" rx="2"/>
-  <text class="lbl" x="334" y="77">full fine-tuning</text>
-
-  <rect class="box" x="320" y="130" width="164" height="36" rx="2"/>
-  <text class="lbl" x="334" y="153">prompt tuning</text>
-
-  <rect class="box" x="320" y="206" width="164" height="36" rx="2"/>
-  <text class="lbl" x="334" y="229">parameter-efficient</text>
-
-  <!-- fan in -->
-  <g class="arr">
-    <path d="M484 72  C 514 72,  518 148, 546 148"/>
-    <path d="M484 148 L 546 148"/>
-    <path d="M484 224 C 514 224, 518 148, 546 148"/>
-    <path d="M540 144 L 546 148 L 540 152"/>
+  <g>
+    <rect class="frozen" x="28"  y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="55"  y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="82"  y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="109" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="136" y="222" width="22" height="22" rx="2"/>
   </g>
+  <text class="lbl" x="166" y="238">tokens</text>
+  <text class="sub" x="28" y="278">Every weight in the model</text>
+  <text class="sub" x="28" y="296">is updated. One full copy</text>
+  <text class="sub" x="28" y="314">of the model per task.</text>
 
-  <!-- output -->
-  <rect class="out" x="546" y="124" width="72" height="48" rx="2"/>
-  <text class="outt" x="582" y="144" text-anchor="middle">severity</text>
-  <text class="outt" x="582" y="158" text-anchor="middle">score</text>
+  <!-- ============ 2. prompt tuning ============ -->
+  <text class="ttl" x="268" y="60">Prompt tuning</text>
+  <g>
+    <rect class="frozen" x="268" y="76"  width="176" height="26" rx="2"/>
+    <rect class="frozen" x="268" y="110" width="176" height="26" rx="2"/>
+    <rect class="frozen" x="268" y="144" width="176" height="26" rx="2"/>
+    <rect class="frozen" x="268" y="178" width="176" height="26" rx="2"/>
+  </g>
+  <g>
+    <rect class="trained" x="268" y="222" width="22" height="22" rx="2"/>
+    <rect class="trained" x="295" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="322" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="349" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="376" y="222" width="22" height="22" rx="2"/>
+  </g>
+  <text class="lbl" x="406" y="238">tokens</text>
+  <text class="sub" x="268" y="278">A handful of soft prompt</text>
+  <text class="sub" x="268" y="296">vectors are learned at the</text>
+  <text class="sub" x="268" y="314">input. The model is frozen.</text>
 
-  <text class="dim" x="24" y="276">compared at equal data: how much adaptation the task actually needs</text>
+  <!-- ============ 3. P-tuning ============ -->
+  <text class="ttl" x="508" y="60">P-tuning</text>
+  <g>
+    <rect class="frozen" x="532" y="76"  width="152" height="26" rx="2"/>
+    <rect class="frozen" x="532" y="110" width="152" height="26" rx="2"/>
+    <rect class="frozen" x="532" y="144" width="152" height="26" rx="2"/>
+    <rect class="frozen" x="532" y="178" width="152" height="26" rx="2"/>
+    <rect class="trained" x="508" y="76"  width="16" height="26" rx="2"/>
+    <rect class="trained" x="508" y="110" width="16" height="26" rx="2"/>
+    <rect class="trained" x="508" y="144" width="16" height="26" rx="2"/>
+    <rect class="trained" x="508" y="178" width="16" height="26" rx="2"/>
+  </g>
+  <g>
+    <rect class="trained" x="508" y="222" width="22" height="22" rx="2"/>
+    <rect class="trained" x="535" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="562" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="589" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen"  x="616" y="222" width="22" height="22" rx="2"/>
+  </g>
+  <text class="lbl" x="646" y="238">tokens</text>
+  <text class="sub" x="508" y="278">Continuous prompts enter</text>
+  <text class="sub" x="508" y="296">at every layer, not only at</text>
+  <text class="sub" x="508" y="314">the input.</text>
+
+  <!-- ============ 4. LoRA ============ -->
+  <text class="ttl" x="748" y="60">Low-rank adapters</text>
+  <g>
+    <rect class="frozen" x="748" y="76"  width="176" height="26" rx="2"/>
+    <rect class="frozen" x="748" y="110" width="176" height="26" rx="2"/>
+    <rect class="frozen" x="748" y="144" width="176" height="26" rx="2"/>
+    <rect class="frozen" x="748" y="178" width="176" height="26" rx="2"/>
+    <rect class="tint" x="884" y="82"  width="32" height="14" rx="2"/>
+    <rect class="tint" x="884" y="116" width="32" height="14" rx="2"/>
+    <rect class="tint" x="884" y="150" width="32" height="14" rx="2"/>
+    <rect class="tint" x="884" y="184" width="32" height="14" rx="2"/>
+  </g>
+  <g>
+    <rect class="frozen" x="748" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="775" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="802" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="829" y="222" width="22" height="22" rx="2"/>
+    <rect class="frozen" x="856" y="222" width="22" height="22" rx="2"/>
+  </g>
+  <text class="lbl" x="886" y="238">tokens</text>
+  <text class="sub" x="748" y="278">A small low-rank matrix is</text>
+  <text class="sub" x="748" y="296">trained beside each frozen</text>
+  <text class="sub" x="748" y="314">layer and added to it.</text>
 </svg>

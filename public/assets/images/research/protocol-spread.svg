@@ -6,12 +6,6 @@
     .dot { fill: #1B2A6B; fill-opacity: .55; }
     .dot.hi { fill: #C0442F; fill-opacity: .7; }
     .box { fill: none; stroke: #DBDDD6; }
-    @media (prefers-color-scheme: dark) {
-      .lbl { fill: #6E747C; }
-      .rule, .box { stroke: #2A2E35; }
-      .dot { fill: #5B73D8; }
-      .dot.hi { fill: #E46A52; }
-    }
   </style>
 
   <text class="lbl" x="28" y="32">ONE COHORT, ONE LABEL</text>

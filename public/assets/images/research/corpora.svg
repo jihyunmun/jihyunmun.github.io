@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 300" role="img"
+     aria-label="An inventory of what was built: a chronic kidney disease speech corpus of 289 patients, a Korean corpus of children with autism spectrum disorder, phonetic transcription toolkits for L1 and L2 Korean, two registered software works, and one open code release.">
+  <style>
+    .h    { font: 600 13px "IBM Plex Sans", system-ui, sans-serif; fill: #15171B; }
+    .sub  { font: 12px "IBM Plex Sans", system-ui, sans-serif; fill: #5B6066; }
+    .lbl  { font: 10px "IBM Plex Mono", monospace; fill: #8A9098; letter-spacing: .06em; }
+    .num  { font: 600 26px "IBM Plex Sans", system-ui, sans-serif; fill: #2A3C8F; }
+    .box  { fill: none; stroke: #DBDDD6; }
+    .rule { stroke: #DBDDD6; }
+  </style>
+
+  <text class="lbl" x="28" y="30">BUILT BECAUSE IT DID NOT EXIST</text>
+
+  <!-- corpora -->
+  <rect class="box" x="28" y="52" width="296" height="128" rx="2"/>
+  <text class="lbl" x="44" y="76">CORPUS · CLINICAL, NOT REDISTRIBUTABLE</text>
+  <text class="num" x="44" y="112">289</text>
+  <text class="h"   x="112" y="104">patients with chronic</text>
+  <text class="h"   x="112" y="120">kidney disease</text>
+  <text class="sub" x="44" y="146">Severity by eGFR. Sustained vowels,</text>
+  <text class="sub" x="44" y="164">sentence and paragraph stimuli.</text>
+
+  <rect class="box" x="344" y="52" width="296" height="128" rx="2"/>
+  <text class="lbl" x="360" y="76">CORPUS · CLINICAL, NOT REDISTRIBUTABLE</text>
+  <text class="num" x="360" y="112">350</text>
+  <text class="h"   x="428" y="104">Korean children,</text>
+  <text class="h"   x="428" y="120">300 of them with ASD</text>
+  <text class="sub" x="360" y="146">Transcribed and annotated. Severity and</text>
+  <text class="sub" x="360" y="164">pronunciation rated by three clinicians.</text>
+
+  <!-- software column -->
+  <rect class="box" x="660" y="52" width="292" height="128" rx="2"/>
+  <text class="lbl" x="676" y="76">SOFTWARE</text>
+  <text class="h"   x="676" y="104">Phonetic transcription toolkits</text>
+  <text class="sub" x="676" y="122">for L1 and L2 Korean speech</text>
+  <text class="h"   x="676" y="150">Two works registered with the</text>
+  <text class="sub" x="676" y="168">Korea Copyright Commission</text>
+
+  <line class="rule" x1="28" y1="216" x2="952" y2="216"/>
+
+  <text class="lbl" x="28" y="244">PUBLICLY RELEASED</text>
+  <text class="h"   x="28" y="270">handwriting-process-profiling</text>
+  <text class="sub" x="300" y="270">vocabulary, analysis code and reference implementation · MIT · hosted API in preparation</text>
+</svg>

@@ -7,10 +7,10 @@ status: published
 dek: "The first speech corpus for chronic kidney disease and the first Korean corpus of children with ASD; phonetic transcription toolkits for L1 and L2 Korean; and two systems registered with the Korea Copyright Commission."
 media:
   type: image
-  src: /assets/images/research/systems.png
-  alt: "A schematic of the handwriting-profiling system, from a raw pen file through feature extraction and a normative reference to a profile report."
-  ratio: "1200 / 330"
-  caption: "The handwriting-profiling reference implementation, from raw pen file to profile report. This is the one component released publicly."
+  src: /assets/images/research/corpora.svg
+  alt: "An inventory: a chronic kidney disease speech corpus of 289 patients, a Korean corpus of 350 children of whom 300 have ASD, phonetic transcription toolkits for L1 and L2 Korean, two registered software works, and one public code release."
+  ratio: "980 / 300"
+  caption: "What was built because it did not exist yet."
 links:
   - label: "handwriting-process-profiling"
     href: "https://github.com/jihyunmun/handwriting-process-profiling"
@@ -18,9 +18,13 @@ links:
 
 Several of these projects needed data or tooling that did not exist yet.
 
-**Corpora.** The first speech corpus for chronic kidney disease, built with Seoul National
-University Bundang Hospital, and the first Korean speech corpus of children with autism
-spectrum disorder. Both are clinical collections and are not publicly redistributable.
+**Corpora.** The first speech corpus for chronic kidney disease — 289 patients, graded by
+estimated glomerular filtration rate, reading sustained vowels, a sentence and a paragraph —
+built with Seoul National University Bundang Hospital. And the first Korean speech corpus of
+children with autism spectrum disorder, designed for 300 children with ASD alongside 50
+typically developing children, transcribed and annotated, with social communication severity
+and pronunciation proficiency rated by three speech-language pathologists. Both are clinical
+collections and are not publicly redistributable.
 
 **Toolkits.** Automatic phonetic transcription for L1 Korean and for L2 Korean learner
 speech, built under National Information Society Agency projects.
