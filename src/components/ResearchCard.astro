@@ -17,6 +17,7 @@ const href = `/research/${entry.id}/`;
       media={media}
       ratio={featured ? '16 / 7' : '5 / 3'}
       loading={featured ? 'eager' : 'lazy'}
+      trueRatio={featured}
     />
   </a>
   <h3><a href={href}>{title}</a></h3>

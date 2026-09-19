@@ -12,11 +12,15 @@ interface Props {
   media: Media;
   ratio?: string;
   loading?: 'eager' | 'lazy';
+  /** Show the figure at its own aspect instead of the frame's. Used where the
+   *  figure is the subject — the featured slot and the detail page. In a grid
+   *  of cards the opposite is true: a uniform frame keeps titles on a shared
+   *  baseline, and a centred figure on a white plate reads as a printed page,
+   *  not as a letterboxed mistake. */
+  trueRatio?: boolean;
 }
-const { media, ratio, loading = 'lazy' } = Astro.props;
-// The figure's own aspect wins: a paper figure letterboxed inside a card
-// ratio reads as a mistake. The card ratio is only the fallback.
-const aspect = media.ratio ?? ratio ?? '5 / 3';
+const { media, ratio, loading = 'lazy', trueRatio = false } = Astro.props;
+const aspect = (trueRatio ? media.ratio : undefined) ?? ratio ?? '5 / 3';
 ---
 <figure class:list={['media', media.type === 'image' && 'plate']} style={`--ratio: ${aspect}`}>
   {media.type === 'video' ? (

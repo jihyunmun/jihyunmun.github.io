@@ -10,6 +10,7 @@ media:
   src: /media/handwriting-surprise.mp4
   webm: /media/handwriting-surprise.webm
   poster: /media/handwriting-surprise.jpg
+  ratio: "1086 / 748"
   alt: "Two handwriting trajectories drawn side by side from the same dictation task. The control writer's trace stays almost uniformly blue; the dysgraphia trace breaks into red, orange and green."
   caption: "DiaGraMo TSK4 dictation, played at 9× speed. Stroke colour is pen speed, 0–70 mm/s. Top: control writer. Bottom: a child with developmental dysgraphia. Data: Zvončáková et al. 2026 (Zenodo 10.5281/zenodo.18299327, CC-BY-4.0)."
 ---
