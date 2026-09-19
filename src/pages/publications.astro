@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const pubs = (await getCollection('publications'))
+  .map((p) => p.data)
+  .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
+const years = [...new Set(pubs.map((p) => p.year))];
+const TYPE = {
+  conference: 'Conference',
+  journal: 'Journal',
+  preprint: 'Preprint',
+  'in-preparation': 'In preparation',
+} as const;
+---
+<Base title="Publications — Jihyun Mun" page="publications">
+  <p class="eyebrow sec">Publications</p>
+  {years.map((year) => (
+    <section class="year">
+      <h2>{year}</h2>
+      <ol>
+        {pubs.filter((p) => p.year === year).map((p) => (
+          <li class="pub">
+            <p class="title">{p.title}</p>
+            <p class="authors">{p.authors}</p>
+            <p class="meta">
+              <span>{p.venue}</span>
+              <span class="kind">{TYPE[p.type]}</span>
+              {p.pdf && <a href={p.pdf}>PDF ↗</a>}
+              {p.url && <a href={p.url}>arXiv ↗</a>}
+              {p.code && <a href={p.code}>Code ↗</a>}
+              {p.research && <a href={`/research/${p.research}/`}>Project →</a>}
+            </p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .sec { border-top: 1px solid var(--rule); padding-top: 12px; margin: 48px 0 40px; }
+  .year { margin-bottom: 48px; }
+  .year h2 {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--faint);
+    font-weight: 500; border-bottom: 1px solid var(--rule); padding-bottom: 10px;
+  }
+  ol { list-style: none; margin: 0; padding: 0; }
+  .pub { padding-block: 20px; border-bottom: 1px solid var(--rule); }
+  .title { margin: 0; font-size: 16px; line-height: 1.4; max-width: 74ch; }
+  .authors { margin: 6px 0 0; font-size: 14px; color: var(--soft); }
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 14px; margin: 8px 0 0;
+    font-family: var(--mono); font-size: 11px; letter-spacing: .04em; color: var(--faint);
+  }
+  .meta a { color: var(--accent); text-decoration: none; }
+  .meta a:hover { text-decoration: underline; }
+  .kind { color: var(--soft); }
+</style>

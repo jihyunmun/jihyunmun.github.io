@@ -160,3 +160,20 @@ test('detail pages surface their external links', async () => {
     'code link missing',
   );
 });
+
+test('publications page lists every entry with authors and working PDFs', async () => {
+  const page = await html('publications/index.html');
+
+  const yaml = await readFile(
+    new URL('../src/content/publications.yaml', import.meta.url).pathname, 'utf8',
+  );
+  const expected = (yaml.match(/^- id:/gm) ?? []).length;
+  const rendered = (page.match(/<li class="pub"/g) ?? []).length;
+  assert.equal(rendered, expected, `yaml has ${expected} entries, page renders ${rendered}`);
+
+  assert.ok(page.includes('Lee, S., Mun, J.'), 'co-first-author entries are missing authors');
+
+  for (const m of page.matchAll(/href="(\/assets\/pdfs\/[^"]+)"/g)) {
+    assert.ok(await exists(m[1].slice(1)), `${m[1]} is linked but not built`);
+  }
+});
