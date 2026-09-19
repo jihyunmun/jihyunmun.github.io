@@ -140,3 +140,23 @@ test('news shows four dated items, newest first', async () => {
   const sorted = [...times].sort().reverse();
   assert.deepEqual(times, sorted, 'news is not newest-first');
 });
+
+test('every research card links to a page that exists', async () => {
+  const page = await html('index.html');
+  const hrefs = [...new Set(
+    [...page.matchAll(/href="\/research\/([a-z0-9-]+)\/"/g)].map((m) => m[1]),
+  )];
+  assert.equal(hrefs.length, 7, `expected 7 distinct detail links, found ${hrefs.length}`);
+  for (const id of hrefs) {
+    assert.ok(await exists(`research/${id}/index.html`), `/research/${id}/ was not built`);
+  }
+});
+
+test('detail pages surface their external links', async () => {
+  const page = await html('research/handwriting-profiling/index.html');
+  assert.ok(page.includes('https://arxiv.org/abs/2609.15435'), 'arXiv link missing');
+  assert.ok(
+    page.includes('https://github.com/jihyunmun/handwriting-process-profiling'),
+    'code link missing',
+  );
+});
