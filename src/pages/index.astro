@@ -1,12 +1,74 @@
 ---
 import Base from '../layouts/Base.astro';
-import ResearchMedia from '../components/ResearchMedia.astro';
-import { getEntry } from 'astro:content';
+import ResearchCard from '../components/ResearchCard.astro';
+import NewsList from '../components/NewsList.astro';
+import { getCollection } from 'astro:content';
 
-const featured = await getEntry('research', 'handwriting-surprise');
-if (!featured) throw new Error('handwriting-surprise entry missing');
+const entries = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+const [featured, ...rest] = entries;
+
+const links = [
+  { label: 'GitHub', href: 'https://github.com/jihyunmun' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jihyun-mun-b65a58142/' },
+  { label: 'CV (PDF)', href: '/assets/pdfs/cv.pdf' },
+  { label: 'Email', href: 'mailto:jihyun.mun@telecom-sudparis.eu' },
+];
 ---
 <Base title="Jihyun Mun">
-  <h1>Jihyun Mun</h1>
-  <ResearchMedia media={featured.data.media} ratio="16 / 7" loading="eager" />
+  <header class="hero">
+    <div>
+      <h1>Making atypical speech and handwriting measurable.</h1>
+      <p class="role">Postdoctoral Researcher · Samovar, Télécom SudParis, Institut Polytechnique de Paris</p>
+      <p class="bio">
+        I build <em>clinically reliable, interpretable</em> models for speech and handwriting
+        produced by people with disorders, diseases and disabilities — chronic kidney disease,
+        autism spectrum disorder, developmental dysgraphia. The work runs from corpus design and
+        acoustic or kinematic analysis through modelling to the evaluation protocols that decide
+        whether a clinical result is real.
+      </p>
+      <p class="links">
+        {links.map((l) => <a href={l.href}>{l.label}</a>)}
+      </p>
+    </div>
+    <NewsList limit={4} />
+  </header>
+
+  <p class="eyebrow sec">Selected research</p>
+  <div class="feature"><ResearchCard entry={featured} featured /></div>
+  <div class="grid">
+    {rest.map((entry) => <ResearchCard entry={entry} />)}
+  </div>
 </Base>
+
+<style>
+  .hero {
+    padding-block: 84px 52px;
+    display: grid; gap: 28px;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    align-items: start;
+  }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; padding-block: 52px 36px; }
+  }
+  h1 { font-size: clamp(38px, 6.4vw, 60px); line-height: 1.04; letter-spacing: -.02em; }
+  .role {
+    font-family: var(--mono); font-size: 13px; letter-spacing: .04em;
+    color: var(--accent); margin: 18px 0 0;
+  }
+  .bio { max-width: 62ch; color: var(--soft); margin: 18px 0 0; font-size: 17px; }
+  .bio em { color: var(--ink); font-style: normal; }
+  .links {
+    display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 26px 0 0;
+    font-family: var(--mono); font-size: 12.5px;
+  }
+  .links a {
+    text-decoration: none; color: var(--soft);
+    border-bottom: 1px solid var(--rule); padding-bottom: 2px;
+  }
+  .links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .sec { border-top: 1px solid var(--rule); padding-top: 12px; margin: 0 0 30px; }
+  .feature { margin-bottom: 76px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 40px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; gap: 44px; } }
+</style>

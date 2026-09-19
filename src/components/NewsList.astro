@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props { limit?: number }
+const { limit = 4 } = Astro.props;
+
+const items = (await getCollection('news'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit);
+
+const stamp = (d: Date) => `${d.getUTCFullYear()}.${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+---
+<section class="news" aria-labelledby="news-heading">
+  <h2 id="news-heading" class="eyebrow">News</h2>
+  <ol>
+    {items.map((n) => (
+      <li>
+        <time datetime={iso(n.data.date)}>{stamp(n.data.date)}</time>
+        <span set:html={n.data.text.replace(/\*(.+?)\*/g, '<em>$1</em>')} />
+      </li>
+    ))}
+  </ol>
+</section>
+
+<style>
+  .news { border-top: 1px solid var(--rule); padding-top: 14px; }
+  ol { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 11px; }
+  li {
+    display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px;
+    font-size: 13.5px; line-height: 1.45;
+  }
+  time {
+    font-family: var(--mono); font-size: 11.5px; color: var(--faint);
+    padding-top: 2px; font-variant-numeric: tabular-nums;
+  }
+</style>

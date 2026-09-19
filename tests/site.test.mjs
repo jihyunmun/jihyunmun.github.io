@@ -120,3 +120,23 @@ test('non-published work is labelled', async () => {
     assert.ok(page.includes(label), `status label "${label}" never appears`);
   }
 });
+
+test('landing page carries the positioning, contact and all seven cards', async () => {
+  const page = await html('index.html');
+  assert.ok(page.includes('Samovar, Télécom SudParis'), 'affiliation missing');
+  assert.ok(page.includes('jihyun.mun@telecom-sudparis.eu'), 'new email missing');
+  assert.ok(!page.includes('jhhh_1202@snu.ac.kr'), 'old SNU email still present');
+  assert.ok(!/scholar\.google/i.test(page), 'Google Scholar link present');
+  assert.ok(!page.includes('portrait.jpg'), 'portrait is referenced');
+
+  const cards = page.match(/<article class="card/g) ?? [];
+  assert.equal(cards.length, 7, `expected 7 research cards, found ${cards.length}`);
+});
+
+test('news shows four dated items, newest first', async () => {
+  const page = await html('index.html');
+  const times = [...page.matchAll(/<time datetime="(\d{4}-\d{2}-\d{2})"/g)].map((m) => m[1]);
+  assert.equal(times.length, 4, `expected 4 news items, found ${times.length}`);
+  const sorted = [...times].sort().reverse();
+  assert.deepEqual(times, sorted, 'news is not newest-first');
+});
