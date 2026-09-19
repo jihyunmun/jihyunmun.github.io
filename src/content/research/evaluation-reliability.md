@@ -9,6 +9,7 @@ media:
   type: image
   src: /assets/images/research/protocol-spread.svg
   alt: "A schematic in which one fixed dataset fans out through four protocol choices and the reported scores land at scattered positions on an unlabelled axis."
+  ratio: "640 / 400"
   caption: "Schematic, not results: one cohort, several individually defensible protocols, and the spread in what gets reported. No values are shown — the measurements belong to work still under review."
 ---
 

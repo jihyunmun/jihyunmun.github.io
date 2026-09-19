@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img"
+     aria-label="One dataset fans out through four protocol choices; the reported scores land at scattered positions on an unlabelled axis.">
+  <style>
+    .lbl { font: 11px "IBM Plex Mono", monospace; fill: #8A9098; letter-spacing: .04em; }
+    .rule { stroke: #DBDDD6; }
+    .dot { fill: #1B2A6B; fill-opacity: .55; }
+    .dot.hi { fill: #C0442F; fill-opacity: .7; }
+    .box { fill: none; stroke: #DBDDD6; }
+    @media (prefers-color-scheme: dark) {
+      .lbl { fill: #6E747C; }
+      .rule, .box { stroke: #2A2E35; }
+      .dot { fill: #5B73D8; }
+      .dot.hi { fill: #E46A52; }
+    }
+  </style>
+
+  <text class="lbl" x="28" y="32">ONE COHORT, ONE LABEL</text>
+  <rect class="box" x="28" y="176" width="96" height="44" rx="2"/>
+  <text class="lbl" x="76" y="202" text-anchor="middle">dataset</text>
+
+  <g class="rule" fill="none" stroke-width="1">
+    <path d="M124 198 C 156 198, 160 96,  196 96"/>
+    <path d="M124 198 C 156 198, 160 164, 196 164"/>
+    <path d="M124 198 C 156 198, 160 232, 196 232"/>
+    <path d="M124 198 C 156 198, 160 300, 196 300"/>
+  </g>
+
+  <g>
+    <rect class="box" x="196" y="78"  width="148" height="34" rx="2"/>
+    <rect class="box" x="196" y="146" width="148" height="34" rx="2"/>
+    <rect class="box" x="196" y="214" width="148" height="34" rx="2"/>
+    <rect class="box" x="196" y="282" width="148" height="34" rx="2"/>
+    <text class="lbl" x="210" y="100">split scheme</text>
+    <text class="lbl" x="210" y="168">feature set</text>
+    <text class="lbl" x="210" y="236">normalisation</text>
+    <text class="lbl" x="210" y="304">tuning protocol</text>
+  </g>
+
+  <line class="rule" x1="396" y1="340" x2="612" y2="340"/>
+  <text class="lbl" x="396" y="362">reported performance →</text>
+
+  <g>
+    <circle class="dot"    cx="436" cy="95"  r="4"/>
+    <circle class="dot"    cx="486" cy="95"  r="4"/>
+    <circle class="dot hi" cx="580" cy="95"  r="4"/>
+    <circle class="dot"    cx="462" cy="163" r="4"/>
+    <circle class="dot"    cx="522" cy="163" r="4"/>
+    <circle class="dot hi" cx="566" cy="163" r="4"/>
+    <circle class="dot"    cx="448" cy="231" r="4"/>
+    <circle class="dot"    cx="500" cy="231" r="4"/>
+    <circle class="dot"    cx="538" cy="231" r="4"/>
+    <circle class="dot"    cx="424" cy="299" r="4"/>
+    <circle class="dot"    cx="506" cy="299" r="4"/>
+    <circle class="dot hi" cx="592" cy="299" r="4"/>
+  </g>
+
+  <g class="rule" stroke-dasharray="2 4">
+    <line x1="396" y1="70" x2="396" y2="326"/>
+    <line x1="612" y1="70" x2="612" y2="326"/>
+  </g>
+  <text class="lbl" x="396" y="60">worse</text>
+  <text class="lbl" x="612" y="60" text-anchor="end">better</text>
+</svg>

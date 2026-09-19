@@ -7,8 +7,9 @@ status: published
 dek: "Comparing full fine-tuning, prompt tuning, and parameter-efficient adaptation of language models over ASR transcripts to predict clinician severity scores — alongside the corpus and the linguistic analysis it is built on."
 media:
   type: image
-  src: /assets/images/research/lm-adaptation.png
+  src: /assets/images/research/lm-adaptation.svg
   alt: "A diagram in which an ASR transcript is fed to a language model and used to predict a social communication severity score."
+  ratio: "640 / 300"
   caption: "Predicting clinician severity scores from ASR transcripts. Figure from the Interspeech 2024 paper."
 ---
 

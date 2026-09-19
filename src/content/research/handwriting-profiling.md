@@ -9,6 +9,7 @@ media:
   type: image
   src: /assets/images/research/profile-radar.png
   alt: "A twelve-axis radar chart showing one child's handwriting-process deviation profile against a shaded normative band."
+  ratio: "980 / 918"
   caption: "Per-child deviation profile across the 12 handwriting-process domains, with the age- and sex-adjusted normative band shaded. Figure from the paper."
 links:
   - label: "Preprint"

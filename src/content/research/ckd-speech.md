@@ -9,6 +9,7 @@ media:
   type: image
   src: /assets/images/research/ckd-spectrogram.png
   alt: "The model architecture for chronic kidney disease detection, fusing glottal and spectrogram representations."
+  ratio: "1200 / 478"
   caption: "Transformer fusion of glottal and spectrogram features. Figure from the Interspeech 2025 paper. No patient audio is published."
 ---
 

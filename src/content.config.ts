@@ -9,6 +9,9 @@ const media = z.object({
   webm: z.string().optional(),
   alt: z.string().min(1),
   caption: z.string().min(1),
+  // Aspect ratio of the source, so the frame fits the figure instead of
+  // letterboxing it. Omit to fall back to the card default.
+  ratio: z.string().optional(),
 });
 
 const link = z.object({

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" role="img"
+     aria-label="A child's speech is transcribed by an adapted recogniser, then a language model adapted in one of three ways — full fine-tuning, prompt tuning, or parameter-efficient adaptation — predicts a social communication severity score.">
+  <style>
+    .lbl  { font: 11px "IBM Plex Mono", monospace; fill: #5B6066; letter-spacing: .03em; }
+    .dim  { font: 10px "IBM Plex Mono", monospace; fill: #8A9098; letter-spacing: .04em; }
+    .box  { fill: none; stroke: #DBDDD6; }
+    .out  { fill: #E3E7F6; stroke: #2A3C8F; }
+    .outt { font: 11px "IBM Plex Mono", monospace; fill: #2A3C8F; letter-spacing: .03em; }
+    .arr  { stroke: #8A9098; fill: none; stroke-width: 1.1; }
+    @media (prefers-color-scheme: dark) {
+      .lbl  { fill: #9BA1A8; }
+      .dim  { fill: #6E747C; }
+      .box  { stroke: #2A2E35; }
+      .out  { fill: #1D2338; stroke: #92A6F2; }
+      .outt { fill: #92A6F2; }
+      .arr  { stroke: #6E747C; }
+    }
+  </style>
+
+  <text class="dim" x="24" y="28">CHILD SPEECH → SEVERITY SCORE</text>
+
+  <!-- stage 1 -->
+  <rect class="box" x="24" y="128" width="104" height="40" rx="2"/>
+  <text class="lbl" x="76" y="144" text-anchor="middle">adapted</text>
+  <text class="lbl" x="76" y="158" text-anchor="middle">recogniser</text>
+
+  <path class="arr" d="M128 148 L 160 148"/>
+  <path class="arr" d="M154 144 L 160 148 L 154 152"/>
+
+  <!-- stage 2 -->
+  <rect class="box" x="160" y="128" width="96" height="40" rx="2"/>
+  <text class="lbl" x="208" y="152" text-anchor="middle">transcript</text>
+
+  <!-- fan out -->
+  <g class="arr">
+    <path d="M256 148 C 286 148, 290 72,  320 72"/>
+    <path d="M256 148 C 286 148, 290 148, 320 148"/>
+    <path d="M256 148 C 286 148, 290 224, 320 224"/>
+  </g>
+
+  <text class="dim" x="320" y="44">THREE ADAPTATION REGIMES, ONE TRANSCRIPT SET</text>
+
+  <!-- three regimes -->
+  <rect class="box" x="320" y="54"  width="164" height="36" rx="2"/>
+  <text class="lbl" x="334" y="77">full fine-tuning</text>
+
+  <rect class="box" x="320" y="130" width="164" height="36" rx="2"/>
+  <text class="lbl" x="334" y="153">prompt tuning</text>
+
+  <rect class="box" x="320" y="206" width="164" height="36" rx="2"/>
+  <text class="lbl" x="334" y="229">parameter-efficient</text>
+
+  <!-- fan in -->
+  <g class="arr">
+    <path d="M484 72  C 514 72,  518 148, 546 148"/>
+    <path d="M484 148 L 546 148"/>
+    <path d="M484 224 C 514 224, 518 148, 546 148"/>
+    <path d="M540 144 L 546 148 L 540 152"/>
+  </g>
+
+  <!-- output -->
+  <rect class="out" x="546" y="124" width="72" height="48" rx="2"/>
+  <text class="outt" x="582" y="144" text-anchor="middle">severity</text>
+  <text class="outt" x="582" y="158" text-anchor="middle">score</text>
+
+  <text class="dim" x="24" y="276">compared at equal data: how much adaptation the task actually needs</text>
+</svg>

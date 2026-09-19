@@ -9,6 +9,7 @@ media:
   type: image
   src: /assets/images/research/systems.png
   alt: "A schematic of the handwriting-profiling system, from a raw pen file through feature extraction and a normative reference to a profile report."
+  ratio: "1200 / 330"
   caption: "The handwriting-profiling reference implementation, from raw pen file to profile report. This is the one component released publicly."
 links:
   - label: "handwriting-process-profiling"

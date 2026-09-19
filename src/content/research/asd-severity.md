@@ -9,6 +9,7 @@ media:
   type: image
   src: /assets/images/research/asd-pipeline.png
   alt: "The cascaded multimodal architecture that turns a child's speech into a predicted social communication severity score."
+  ratio: "1000 / 464"
   caption: "The cascaded assessment model. Figure from the Interspeech 2025 paper. Child speech is not published; the figure shows system structure only."
 ---
 
