@@ -221,3 +221,14 @@ test('old URLs redirect to their new homes', async () => {
     assert.ok(page.includes(`href="${to}"`), `/${from}/ has no visible link to ${to}`);
   }
 });
+
+test('no word is glued to an inline tag by template whitespace', async () => {
+  // Astro trims the newline before an element that starts a line, which
+  // silently deletes the space between it and the preceding word.
+  for (const page of ['index.html', 'research/handwriting-surprise/index.html']) {
+    const body = (await html(page)).replace(/<(script|style)[\s\S]*?<\/\1>/g, '');
+    const glued = [...body.matchAll(/([a-z]{2,})<(em|strong|a|b|i)\b/g)];
+    assert.equal(glued.length, 0,
+      `${page}: "${glued.map((m) => m[0]).join('", "')}" has no space before the tag`);
+  }
+});

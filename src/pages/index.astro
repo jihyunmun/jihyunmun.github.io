@@ -18,24 +18,18 @@ const links = [
 <Base title="Jihyun Mun">
   <header class="hero">
     <div>
-      <h1>Making clinical assessment reach the people it keeps missing.</h1>
+      <h1>Making technology reach the people it keeps missing.</h1>
       <p class="role">Postdoctoral Researcher · Samovar, Télécom SudParis, Institut Polytechnique de Paris</p>
       <p class="bio">
         People living with a disorder, disease or disability are the ones technology serves
-        last. The recogniser does not understand them, the screening test never reaches them,
-        and the model that scores them cannot say why. I use AI to close that gap.
+        last: the recogniser does not understand them, the screening test never reaches them,
+        and the model that scores them cannot say why. I use AI to close that gap —
+        across <em>signals</em>, the models that read them, and the explainability and
+        evaluation that decide whether a result can be trusted.
       </p>
       <p class="bio">
-        The work has three axes. <em>Signals</em> — what a condition actually changes in
-        speech, handwriting and related biosignals. <em>Models</em> — deep learning that
-        detects and grades those conditions on the small, imbalanced cohorts clinical data
-        arrives in. <em>Trust</em> — the explainability and evaluation that decide whether a
-        result can be acted on.
-      </p>
-      <p class="bio">
-        Explainability is the load-bearing one. A score a clinician cannot interrogate is not
-        a tool, however high its accuracy — so the models are built to say what they
-        responded to, and the evaluation is built to survive someone checking it.
+        Explainability carries the weight. A score a clinician cannot interrogate is not a
+        tool, however accurate.
       </p>
       <p class="links">
         {links.map((l) => <a href={l.href}>{l.label}</a>)}
@@ -55,7 +49,7 @@ const links = [
   .hero {
     padding-block: 84px 52px;
     display: grid; gap: 28px;
-    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-columns: minmax(0, 1fr) 330px;
     align-items: start;
   }
   @media (max-width: 760px) {
