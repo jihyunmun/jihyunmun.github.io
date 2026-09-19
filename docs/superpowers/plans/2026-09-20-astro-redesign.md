@@ -2141,6 +2141,8 @@ const positions = [
 ];
 
 const projects = [
+  ['Development of a Personalized Integrated System Combining Wearable Transcranial Magnetic Stimulation and Digital Therapeutics for Enhancing Communication in Children with Autism Spectrum Disorder',
+   'Korean Ministry of Trade, Industry and Resources', '2025.04 – 2025.12'],
   ['Development of Digital Therapeutics to Improve Communication Skills of Autistic Patients',
    'Korean Institute for Information & Communication Technology Planning & Evaluation', '2022.09 – 2024.12'],
   ['Construction of a Cohort through Voice Banking of Chronic Kidney Disease Patients and Analysis of Voice Characteristics according to Renal Function',

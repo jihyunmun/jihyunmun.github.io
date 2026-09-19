@@ -1,0 +1,109 @@
+- id: interspeech-2025-ckd
+  year: 2025
+  title: "Speech-Based Automatic Chronic Kidney Disease Diagnosis via Transformer Fusion of Glottal and Spectrogram Features"
+  authors: "Mun, J., Kim, S., & Chung, M."
+  venue: "Interspeech 2025"
+  type: conference
+  pdf: /assets/pdfs/2025_interspeech_ckd.pdf
+  thumb: /assets/images/2025_interspeech_ckd.png
+  research: ckd-speech
+
+- id: interspeech-2025-asd
+  year: 2025
+  title: "A Cascaded Multimodal Framework for Automatic Social Communication Severity Assessment in Children with Autism Spectrum Disorder"
+  authors: "Mun, J., Kim, S., & Chung, M."
+  venue: "Interspeech 2025"
+  type: conference
+  pdf: /assets/pdfs/2025_interspeech_asd.pdf
+  thumb: /assets/images/2025_interspeech_asd.png
+  research: asd-severity
+
+- id: interspeech-2024-asd
+  year: 2024
+  title: "Developing an End-to-End Framework for Predicting the Social Communication Severity Scores of Children with Autism Spectrum Disorder"
+  authors: "Mun, J., Kim, S., & Chung, M."
+  venue: "Interspeech 2024"
+  type: conference
+  pdf: /assets/pdfs/2024_interspeech.pdf
+  thumb: /assets/images/2024_interspeech.png
+  research: language-models-assessment
+
+- id: icchp-2024
+  year: 2024
+  title: "Automatic Speech Recognition and Assessment Systems Incorporated into Digital Therapeutics for Children with Autism Spectrum Disorder"
+  authors: "Lee, S., Mun, J., Kim, S., Park, H., Yang, S., Kim, H., Noh, S., Kim, W., & Chung, M."
+  venue: "ICCHP 2024"
+  type: conference
+  pdf: /assets/pdfs/2024_icchp.pdf
+  thumb: /assets/images/2024_icchp.png
+  research: asd-severity
+
+- id: lrec-coling-2024
+  year: 2024
+  title: "Speech Corpus for Korean Children with Autism Spectrum Disorder: Towards Automatic Assessment Systems"
+  authors: "Lee, S., Mun, J., Kim, S., & Chung, M."
+  venue: "LREC-COLING 2024"
+  type: conference
+  pdf: /assets/pdfs/2024_lrec.pdf
+  research: language-models-assessment
+
+- id: interspeech-2023-ckd
+  year: 2023
+  title: "An Analysis of Glottal Features of Chronic Kidney Disease Speech and Its Application to CKD Detection"
+  authors: "Mun, J., Kim, S., Kim, M. J., Ryu, J., Kim, S., & Chung, M."
+  venue: "Interspeech 2023"
+  type: conference
+  pdf: /assets/pdfs/2023_interspeech.pdf
+  research: ckd-speech
+
+- id: cocosda-2022
+  year: 2022
+  title: "A Speech Corpus for Chronic Kidney Disease"
+  authors: "Mun, J., Kim, S., Kim, M. J., Ryu, J., Kim, S., & Chung, M."
+  venue: "Oriental COCOSDA 2022"
+  type: conference
+  pdf: /assets/pdfs/2022_cocosda.pdf
+  research: ckd-speech
+
+- id: pss-2022
+  year: 2022
+  title: "Automatic detection and severity prediction of chronic kidney disease using machine learning classifiers"
+  authors: "Mun, J., Kim, S., Kim, M. J., Ryu, J., Kim, S., & Chung, M."
+  venue: "Phonetics and Speech Sciences, 14(4), 45–56"
+  type: journal
+  pdf: /assets/pdfs/2022_phonetics-and-sciences.pdf
+  research: ckd-speech
+
+- id: pss-2021
+  year: 2021
+  title: "Acoustic analysis of Korean affricates produced by dysarthric speakers with cerebral palsy"
+  authors: "Mun, J., Kim, S., & Chung, M."
+  venue: "Phonetics and Speech Sciences, 13(2), 45–55"
+  type: journal
+  pdf: /assets/pdfs/2021_phonetics-and-sciences.pdf
+
+- id: arxiv-2609-15435
+  year: 2026
+  title: "Profiling Handwriting-Process Deviations in Developmental Dysgraphia: An Open, Normatively-Referenced Instrument"
+  authors: "Mun, J., & El-Yacoubi, M. A."
+  venue: "Under review, Behavior Research Methods"
+  type: preprint
+  url: "https://arxiv.org/abs/2609.15435"
+  code: "https://github.com/jihyunmun/handwriting-process-profiling"
+  research: handwriting-profiling
+
+- id: tcds-dysgraphia
+  year: 2026
+  title: "An Explainable Machine Learning Pipeline for Online-Handwriting-Based Dysgraphia Detection: Unbiased Evaluation, Feature Attribution, and Exploratory Subgroup Characterization"
+  authors: "Mun, J., & El-Yacoubi, M. A."
+  venue: "Under review, IEEE Transactions on Cognitive and Developmental Systems"
+  type: preprint
+  research: evaluation-reliability
+
+- id: pipeline-lottery
+  year: 2026
+  title: "Decomposing reported performance in small-sample clinical ML"
+  authors: "Mun, J., & El-Yacoubi, M. A."
+  venue: "In preparation"
+  type: in-preparation
+  research: evaluation-reliability

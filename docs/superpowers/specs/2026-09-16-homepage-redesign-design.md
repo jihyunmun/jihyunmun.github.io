@@ -62,7 +62,7 @@
 | `/research/` | 대표 연구 7건 인덱스 (랜딩과 동일 그리드, 상태·연도 필터 없이 전체) |
 | `/research/<slug>/` | hero 미디어 → TL;DR 3줄 → figure 중심 서술 → 논문·코드·데이터 링크 |
 | `/publications/` | 연도 역순 전체 목록 · venue 태그 · PDF 링크 · 미니 썸네일 |
-| `/cv/` | CV PDF + 학력 + funded projects 6건 + 특허 1건 + 소프트웨어 등록 2건 + grants 5건 |
+| `/cv/` | CV PDF + 학력 + funded projects 7건 + 특허 1건 + 소프트웨어 등록 2건 + grants 5건 |
 
 **내비게이션은 `Research` / `Publications` / `CV` 3개.**
 
@@ -71,7 +71,7 @@
 - `about.md` → 랜딩 hero bio + `/cv/` 학력 섹션으로 분할 흡수
 - `research.md` (Research Areas 3분류) → 삭제. `/research/`는 대표 연구 7건의 인덱스로 재정의되므로
   기존 URL은 리다이렉트가 아니라 **의미가 대체**된다.
-- `projects.md`, `patents.md`, `education.md` → `/cv/`로 흡수. `patents.md`는 **Patents & Software
+- `projects.md`, `patents.md`, `education.md` → `/cv/`로 흡수 (funded projects 7건). `patents.md`는 **Patents & Software
   Registrations**로 확장한다(§5-⑦, §10-9).
 - `autism.md`, `ckd.md` → `/research/asd-severity/`, `/research/ckd-speech/`로 재작성
 - `categories.md`, `tags.md`, `years.md`, `faq.md`, `docs.md`, `_posts/*` → 삭제 (테마 잔여물)
@@ -445,7 +445,7 @@ src/content/
 | D22 | 포트레이트 | **사용하지 않는다.** `assets/images/portrait.jpg`는 저장소에 그대로 두되 참조하지 않는다 |
 | D23 | hosted API | "in preparation"으로 기술. 코드 저장소 링크는 유지 |
 | D24 | Google Scholar | **링크에서 제외.** 최종 링크: GitHub · LinkedIn · CV (PDF) · Email |
-| D25 | CV PDF | 갱신 완료 (4p). `assets/pdfs/cv.pdf` 교체됨 — 2026-09-19판 |
+| D25 | CV PDF | 갱신 완료 (4p). `assets/pdfs/cv.pdf` = **2026-09-19 v2판**. v2는 PROJECTS에 산업통상자원부 wearable TMS + 디지털치료제 과제(2025.04–2025.12) 1건을 추가 — funded projects 총 7건 |
 | D26 | CKD 저널 in-prep | **제거.** 사용자가 CV에서 뺐으므로 ④ 카드에서도 뺀다 |
 | D27 | pipeline lottery 논문 | 제목 확정 — *Decomposing reported performance in small-sample clinical ML* (Mun & El-Yacoubi), **in preparation** |
 

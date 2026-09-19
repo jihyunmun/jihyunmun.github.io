@@ -55,3 +55,39 @@ test('body paints its own background', async () => {
   const css = await styles('index.html');
   assert.match(css, /body\s*{[^}]*background:\s*var\(--paper\)/s);
 });
+
+test('research collection has seven entries, one featured', async () => {
+  const { readdir } = await import('node:fs/promises');
+  const dir = new URL('../src/content/research/', import.meta.url).pathname;
+  const files = (await readdir(dir)).filter((f) => f.endsWith('.md'));
+  assert.equal(files.length, 7, `expected 7 research files, found ${files.length}`);
+
+  let featured = 0;
+  for (const f of files) {
+    const body = await readFile(join(dir, f), 'utf8');
+    if (/^featured:\s*true\s*$/m.test(body)) featured += 1;
+    assert.match(body, /^\s+alt:\s*\S/m, `${f} has no media alt`);
+    assert.match(body, /^\s+caption:\s*\S/m, `${f} has no media caption`);
+  }
+  assert.equal(featured, 1, `expected exactly 1 featured entry, found ${featured}`);
+});
+
+test('nothing withheld leaks into content', async () => {
+  const { readdir } = await import('node:fs/promises');
+  const root = new URL('../src/content/', import.meta.url).pathname;
+  const banned = [/CHIRO-?NEURO/i, /ANR-NRF/i, /lifeformer/i, /LifeCast/i];
+  const walk = async (d) => {
+    const out = [];
+    for (const e of await readdir(d, { withFileTypes: true })) {
+      const p = join(d, e.name);
+      out.push(...(e.isDirectory() ? await walk(p) : [p]));
+    }
+    return out;
+  };
+  for (const f of await walk(root)) {
+    const body = await readFile(f, 'utf8');
+    for (const re of banned) {
+      assert.ok(!re.test(body), `${f} mentions ${re}`);
+    }
+  }
+});
