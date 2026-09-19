@@ -177,3 +177,18 @@ test('publications page lists every entry with authors and working PDFs', async 
     assert.ok(await exists(m[1].slice(1)), `${m[1]} is linked but not built`);
   }
 });
+
+test('CV page matches the PDF and attributes software rights correctly', async () => {
+  const page = await html('cv/index.html');
+  assert.ok(page.includes('/assets/pdfs/cv.pdf'), 'CV PDF is not linked');
+  assert.ok(page.includes('C-2026-046494'), 'software registration missing');
+  assert.ok(page.includes('C-2024-033498'), 'software registration missing');
+  assert.ok(page.includes('SNU R&amp;DB Foundation') || page.includes('SNU R&DB Foundation'),
+    'rights holder not named');
+  assert.ok(page.includes('10-2024-0117393'), 'patent number missing');
+  assert.ok(page.includes('Mar 2021 – Aug 2025'), 'PhD dates wrong');
+  assert.ok(!page.includes('Feb 2026'), 'stale PhD conferral date present');
+
+  const projects = (page.match(/class="funder"/g) ?? []).length;
+  assert.ok(projects >= 7 + 1 + 2, `expected 7 projects + 1 patent + 2 registrations, found ${projects} annotated rows`);
+});

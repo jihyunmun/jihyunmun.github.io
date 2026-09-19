@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+
+const education: [string, string][] = [
+  ['Integrated M.A./Ph.D., Linguistics, Seoul National University', 'Mar 2021 – Aug 2025'],
+  ['B.A., Mechanical Engineering and B.A., Linguistics, Seoul National University', 'Mar 2015 – Feb 2021'],
+];
+
+const positions: [string, string][] = [
+  ['Postdoctoral Researcher, Samovar, Télécom SudParis, Institut Polytechnique de Paris', 'Jan 2026 – present'],
+];
+
+const projects: [string, string, string][] = [
+  ['Development of a Personalized Integrated System Combining Wearable Transcranial Magnetic Stimulation and Digital Therapeutics for Enhancing Communication in Children with Autism Spectrum Disorder',
+   'Korean Ministry of Trade, Industry and Resources', '2025.04 – 2025.12'],
+  ['Development of Digital Therapeutics to Improve Communication Skills of Autistic Patients',
+   'Korean Institute for Information & Communication Technology Planning & Evaluation', '2022.09 – 2024.12'],
+  ['Construction of a Cohort through Voice Banking of Chronic Kidney Disease Patients and Analysis of Voice Characteristics according to Renal Function',
+   'Seoul National University Bundang Hospital', '2022.03 – 2024.02'],
+  ['Acquiring and Utilizing Audio Big Data for Healthcare Service Design',
+   'Korean Ministry of Science and ICT', '2021.03 – 2023.12'],
+  ['Korean Speech Data for Western and Asian Language Users for Language Education',
+   'Korean National Information Society Agency', '2022.09 – 2022.11'],
+  ['Multilingual Speech Data Collection for L2 Korean Learners',
+   'Korean National Information Society Agency', '2022.07 – 2022.11'],
+  ['Development of Intelligent Tool-based Content Production and Enjoyment Support Technology Considering the Accessibility of the Weak in Social Communication',
+   'Korean National Information Society Agency', '2021.03 – 2021.12'],
+];
+
+const software: [string, string, string][] = [
+  ['Automatic Speech Recognition System for Semi-spontaneous Speech of Children with Autism Spectrum Disorder',
+   'Korea Copyright Commission, C-2026-046494', 'Registered 2026.09.17'],
+  ['Social Communication Severity Assessment Model for Children with Autism',
+   'Korea Copyright Commission, C-2024-033498', 'Registered 2024.09.25'],
+];
+
+const grants: [string, string][] = [
+  ['Subsequent generations of basic studies, Seoul National University', 'Spring – Fall 2024'],
+  ['Travel Grant, College of Humanities, Seoul National University', 'LREC-COLING 2024'],
+  ['Travel Grant, College of Humanities, Seoul National University', 'Interspeech 2023'],
+  ['Subsequent generations of basic studies, Seoul National University', 'Spring – Fall 2023'],
+  ['Son Joo-eun Creative Talent Scholarship, Seoul National University', 'Fall 2022'],
+];
+---
+<Base title="CV — Jihyun Mun" page="cv">
+  <header class="top">
+    <p class="eyebrow sec">Curriculum vitae</p>
+    <p class="lede">
+      Jihyun Mun · Postdoctoral Researcher, Samovar, Télécom SudParis, Institut Polytechnique de Paris ·
+      <a href="mailto:jihyun.mun@telecom-sudparis.eu">jihyun.mun@telecom-sudparis.eu</a>
+    </p>
+    <p><a class="pdf" href="/assets/pdfs/cv.pdf">Full CV (PDF) ↗</a></p>
+  </header>
+
+  <section>
+    <h2 class="eyebrow">Positions</h2>
+    <dl>{positions.map(([what, when]) => (<><dt>{what}</dt><dd>{when}</dd></>))}</dl>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Education</h2>
+    <dl>{education.map(([what, when]) => (<><dt>{what}</dt><dd>{when}</dd></>))}</dl>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Funded projects</h2>
+    <dl>
+      {projects.map(([what, funder, when]) => (
+        <>
+          <dt>{what}<span class="funder">{funder}</span></dt>
+          <dd>{when}</dd>
+        </>
+      ))}
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Patents</h2>
+    <dl>
+      <dt>
+        Automated System for Predicting Social Communication Severity Scores of Children with
+        Autism Spectrum Disorder and Method for Predicting Scores Using The Same
+        <span class="funder">Application number 10-2024-0117393</span>
+      </dt>
+      <dd>2024</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Registered software</h2>
+    <dl>
+      {software.map(([what, where, when]) => (
+        <>
+          <dt>{what}<span class="funder">{where} · rights held by SNU R&DB Foundation; developed by J. Mun</span></dt>
+          <dd>{when}</dd>
+        </>
+      ))}
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Grants and awards</h2>
+    <dl>{grants.map(([what, when]) => (<><dt>{what}</dt><dd>{when}</dd></>))}</dl>
+  </section>
+</Base>
+
+<style>
+  .top { padding-block: 0 8px; }
+  .sec { border-top: 1px solid var(--rule); padding-top: 12px; margin: 48px 0 24px; }
+  .lede { font-size: 16px; color: var(--soft); max-width: 70ch; margin: 0; }
+  .lede a { color: var(--accent); }
+  .pdf {
+    font-family: var(--mono); font-size: 12.5px; color: var(--accent);
+    text-decoration: none; border-bottom: 1px solid var(--rule);
+  }
+  section { margin-top: 48px; }
+  section > h2 { border-bottom: 1px solid var(--rule); padding-bottom: 10px; }
+  dl {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 24px; margin: 0;
+  }
+  @media (max-width: 640px) { dl { grid-template-columns: 1fr; } }
+  dt { padding-block: 16px 0; font-size: 15px; line-height: 1.45; max-width: 74ch; }
+  dd {
+    margin: 0; padding-block: 16px 0; text-align: right;
+    font-family: var(--mono); font-size: 11.5px; color: var(--faint);
+    white-space: nowrap; font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 640px) { dd { text-align: left; padding-block: 4px 0; } }
+  .funder {
+    display: block; margin-top: 4px;
+    font-family: var(--mono); font-size: 11px; color: var(--soft);
+  }
+</style>
