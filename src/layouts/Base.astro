@@ -32,6 +32,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
     />
+    <script is:inline>
+      // Stamp the stored choice before first paint, so a visitor who picked
+      // light does not get a dark flash on every navigation.
+      try {
+        const m = localStorage.getItem('theme');
+        if (m === 'light' || m === 'dark') document.documentElement.setAttribute('data-theme', m);
+      } catch { /* private window: fall back to prefers-color-scheme */ }
+    </script>
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

@@ -1,0 +1,54 @@
+---
+// Three states, matching how the tokens are written: follow the system, or
+// override it in either direction. The choice is stamped on <html> as
+// data-theme, which the token blocks in tokens.css already honour.
+---
+<button id="theme-toggle" type="button" aria-live="polite">
+  <span class="label">Theme</span>
+  <span class="value" id="theme-value">System</span>
+</button>
+
+<style>
+  button {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    background: none; border: 0; padding: 0; cursor: pointer;
+    color: var(--soft); font-family: var(--mono); font-size: 12.5px;
+    letter-spacing: .06em; text-transform: uppercase;
+  }
+  button:hover { color: var(--ink); }
+  .value {
+    color: var(--ink);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 3px;
+  }
+</style>
+
+<script is:inline>
+  (() => {
+    const ORDER = ['system', 'light', 'dark'];
+    const NAME = { system: 'System', light: 'Light', dark: 'Dark' };
+    const root = document.documentElement;
+
+    const read = () => {
+      try { return localStorage.getItem('theme') || 'system'; }
+      catch { return 'system'; }
+    };
+
+    const apply = (mode) => {
+      if (mode === 'system') root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', mode);
+      const out = document.getElementById('theme-value');
+      if (out) out.textContent = NAME[mode];
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.setAttribute('aria-label', `Colour theme: ${NAME[mode]}. Activate to change.`);
+    };
+
+    apply(read());
+
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const next = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+      try { localStorage.setItem('theme', next); } catch { /* private window */ }
+      apply(next);
+    });
+  })();
+</script>

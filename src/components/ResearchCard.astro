@@ -35,11 +35,10 @@ const href = `/research/${entry.id}/`;
   .featured h3 { font-size: 25px; letter-spacing: -.01em; }
   h3 a { text-decoration: none; }
   h3 a:hover { color: var(--accent); }
-  .dek {
-    color: var(--soft);
-    font-size: 14.5px;
-    margin: 9px 0 0;
-    max-width: 70ch;
-  }
-  .featured .dek { font-size: 15px; }
+  /* Inside a grid card the column already sets the measure, so text fills it.
+     The featured card is full width, so it takes the site measure instead —
+     title and text then end on the same edge. */
+  .dek { color: var(--soft); font-size: 14.5px; margin: 9px 0 0; }
+  .featured h3, .featured .dek { max-width: var(--measure); }
+  .featured .dek { font-size: 15.5px; }
 </style>

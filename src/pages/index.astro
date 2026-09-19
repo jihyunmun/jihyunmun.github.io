@@ -18,16 +18,24 @@ const links = [
 <Base title="Jihyun Mun">
   <header class="hero">
     <div>
-      <h1>Making disordered signals measurable.</h1>
+      <h1>Making clinical assessment reach the people it keeps missing.</h1>
       <p class="role">Postdoctoral Researcher · Samovar, Télécom SudParis, Institut Polytechnique de Paris</p>
       <p class="bio">
-        I build deep-learning models for signals produced under disorder, disease and
-        disability — speech and handwriting so far, and any biosignal that carries the same
-        evidence. Modelling is half of it. The other half is the <em>explainability</em> that
-        lets a clinician see what the model actually responded to, and the
-        <em>evaluation</em> that decides whether the number means anything outside the
-        paper it appeared in. The work runs end to end: corpus design, representation
-        learning, modelling, explanation, validation.
+        People living with a disorder, disease or disability are the ones technology serves
+        last. The recogniser does not understand them, the screening test never reaches them,
+        and the model that scores them cannot say why. I use AI to close that gap.
+      </p>
+      <p class="bio">
+        The work has three axes. <em>Signals</em> — what a condition actually changes in
+        speech, handwriting and related biosignals. <em>Models</em> — deep learning that
+        detects and grades those conditions on the small, imbalanced cohorts clinical data
+        arrives in. <em>Trust</em> — the explainability and evaluation that decide whether a
+        result can be acted on.
+      </p>
+      <p class="bio">
+        Explainability is the load-bearing one. A score a clinician cannot interrogate is not
+        a tool, however high its accuracy — so the models are built to say what they
+        responded to, and the evaluation is built to survive someone checking it.
       </p>
       <p class="links">
         {links.map((l) => <a href={l.href}>{l.label}</a>)}
@@ -53,13 +61,19 @@ const links = [
   @media (max-width: 760px) {
     .hero { grid-template-columns: 1fr; padding-block: 52px 36px; }
   }
-  h1 { font-size: clamp(38px, 6.4vw, 60px); line-height: 1.04; letter-spacing: -.02em; }
+  /* One measure for every line of text in the hero, so the title and the
+     paragraphs end on the same edge instead of three different ones. */
+  h1 {
+    font-size: clamp(34px, 5vw, 50px); line-height: 1.06; letter-spacing: -.02em;
+    max-width: var(--measure);
+  }
   /* Descriptive text, so it takes the body face. Mono is reserved for things
      you navigate by: links, labels, dates, identifiers. */
   .role {
     font-size: 15px; color: var(--accent); margin: 18px 0 0;
+    max-width: var(--measure);
   }
-  .bio { max-width: 62ch; color: var(--soft); margin: 18px 0 0; font-size: 17px; }
+  .bio { max-width: var(--measure); color: var(--soft); margin: 16px 0 0; font-size: 16.5px; }
   .bio em { color: var(--ink); font-style: normal; }
   .links {
     display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 26px 0 0;

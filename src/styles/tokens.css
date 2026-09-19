@@ -19,6 +19,9 @@
 
   --col: 1080px;
   --gutter: 24px;
+  /* One text measure for the whole site. Headings and body share it so every
+     block of text ends on the same edge. */
+  --measure: 36rem;
 }
 
 @media (prefers-color-scheme: dark) {

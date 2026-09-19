@@ -1,8 +1,10 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
 const year = new Date().getFullYear();
 ---
 <footer class="site">
   <span>© {year} Jihyun Mun</span>
+  <ThemeToggle />
   <span>Built for keyboard, screen reader, and reduced motion.</span>
   <span class="credit">
     Handwriting trajectories: DiaGraMo, Zvončáková et al. 2026

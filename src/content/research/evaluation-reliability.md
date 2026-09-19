@@ -2,7 +2,7 @@
 title: "Evaluation and reliability of clinical machine learning"
 order: 6
 featured: false
-venues: ["IEEE TCDS", "NeurIPS Datasets & Benchmarks (target)"]
+venues: ["IEEE TCDS"]
 status: submitted
 dek: "An explainable dysgraphia-detection pipeline built around unbiased evaluation and feature attribution — and a follow-up asking how much of a reported clinical result is the protocol rather than the model."
 media:

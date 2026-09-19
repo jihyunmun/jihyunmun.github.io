@@ -107,7 +107,7 @@ const grants: [string, string][] = [
 <style>
   .top { padding-block: 0 8px; }
   .sec { border-top: 1px solid var(--rule); padding-top: 12px; margin: 48px 0 24px; }
-  .lede { font-size: 16px; color: var(--soft); max-width: 70ch; margin: 0; }
+  .lede { font-size: 16px; color: var(--soft); max-width: var(--measure); margin: 0; }
   .lede a { color: var(--accent); }
   .pdf {
     font-family: var(--mono); font-size: 12.5px; color: var(--accent);
@@ -120,15 +120,17 @@ const grants: [string, string][] = [
     gap: 0 24px; margin: 0;
   }
   @media (max-width: 640px) { dl { grid-template-columns: 1fr; } }
-  dt { padding-block: 16px 0; font-size: 15px; line-height: 1.45; max-width: 74ch; }
+  dt { padding-block: 16px 0; font-size: 15px; line-height: 1.45; max-width: var(--measure); }
   dd {
     margin: 0; padding-block: 16px 0; text-align: right;
     font-family: var(--mono); font-size: 11.5px; color: var(--faint);
     white-space: nowrap; font-variant-numeric: tabular-nums;
   }
   @media (max-width: 640px) { dd { text-align: left; padding-block: 4px 0; } }
+  /* A funder's name is descriptive text, not a label, so it takes the body
+     face. Mono here is reserved for dates and identifiers. */
   .funder {
     display: block; margin-top: 4px;
-    font-family: var(--mono); font-size: 11px; color: var(--soft);
+    font-size: 13px; color: var(--soft);
   }
 </style>

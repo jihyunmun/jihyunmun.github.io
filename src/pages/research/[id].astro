@@ -41,7 +41,7 @@ const { Content } = await render(entry);
   .detail { padding-block: 48px 0; }
   .back { border-top: 1px solid var(--rule); padding-top: 12px; margin: 0 0 40px; }
   .back a { text-decoration: none; }
-  h1 { font-size: clamp(30px, 4.6vw, 42px); line-height: 1.12; letter-spacing: -.015em; max-width: 34ch; }
+  h1 { font-size: clamp(28px, 4vw, 38px); line-height: 1.14; letter-spacing: -.015em; max-width: var(--measure); }
   /* Bibliographic detail sits with the links at the foot of the page, where it
      reads as a reference rather than as a subtitle under the heading. */
   .cite {
@@ -49,8 +49,8 @@ const { Content } = await render(entry);
     padding-top: 16px; border-top: 1px solid var(--rule);
     font-family: var(--mono); font-size: 11.5px; letter-spacing: .05em; color: var(--faint);
   }
-  .dek { font-size: 18px; color: var(--soft); max-width: 68ch; margin: 20px 0 40px; }
-  .prose { max-width: 66ch; margin-top: 44px; color: var(--ink); }
+  .dek { font-size: 17px; color: var(--soft); max-width: var(--measure); margin: 20px 0 40px; }
+  .prose { max-width: var(--measure); margin-top: 44px; color: var(--ink); }
   .prose :global(p) { margin: 0 0 1.15em; }
   .prose :global(strong) { font-weight: 600; }
   .links {
