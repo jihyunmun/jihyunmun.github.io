@@ -113,3 +113,10 @@ test('every figure carries a caption', async () => {
     assert.match(f, /<figcaption[\s\S]*?\S[\s\S]*?<\/figcaption>/, 'figure without caption');
   }
 });
+
+test('non-published work is labelled', async () => {
+  const page = await html('research/index.html');
+  for (const label of ['Under review', 'Submitted', 'In preparation']) {
+    assert.ok(page.includes(label), `status label "${label}" never appears`);
+  }
+});

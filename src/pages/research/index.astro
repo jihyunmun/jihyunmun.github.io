@@ -1,0 +1,23 @@
+---
+import Base from '../../layouts/Base.astro';
+import ResearchCard from '../../components/ResearchCard.astro';
+import { getCollection } from 'astro:content';
+
+const entries = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => a.data.order - b.data.order);
+const [featured, ...rest] = entries;
+---
+<Base title="Research — Jihyun Mun" page="research">
+  <p class="eyebrow sec">Research</p>
+  <div class="feature"><ResearchCard entry={featured} featured /></div>
+  <div class="grid">
+    {rest.map((entry) => <ResearchCard entry={entry} />)}
+  </div>
+</Base>
+
+<style>
+  .sec { border-top: 1px solid var(--rule); padding-top: 12px; margin: 48px 0 30px; }
+  .feature { margin-bottom: 76px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 40px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; gap: 44px; } }
+</style>

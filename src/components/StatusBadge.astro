@@ -1,0 +1,22 @@
+---
+interface Props { status: 'published' | 'under-review' | 'submitted' | 'in-preparation' }
+const { status } = Astro.props;
+const LABEL = {
+  'published': null,
+  'under-review': 'Under review',
+  'submitted': 'Submitted',
+  'in-preparation': 'In preparation',
+} as const;
+const label = LABEL[status];
+---
+{label && <span class="badge">{label}</span>}
+
+<style>
+  .badge {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: var(--fig-peak);
+    white-space: nowrap;
+  }
+</style>
