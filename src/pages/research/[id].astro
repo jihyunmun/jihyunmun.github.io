@@ -18,15 +18,16 @@ const { Content } = await render(entry);
   <article class="detail">
     <p class="eyebrow back"><a href="/research/">← Research</a></p>
     <h1>{title}</h1>
-    <p class="meta">
-      {venues.map((v) => <span>{v}</span>)}
-      <StatusBadge status={status} />
-    </p>
     <p class="dek">{dek}</p>
 
     <ResearchMedia media={media} ratio="16 / 7" loading="eager" trueRatio />
 
     <div class="prose"><Content /></div>
+
+    <p class="cite">
+      {venues.map((v) => <span>{v}</span>)}
+      <StatusBadge status={status} />
+    </p>
 
     {links.length > 0 && (
       <p class="links">
@@ -40,9 +41,12 @@ const { Content } = await render(entry);
   .detail { padding-block: 48px 0; }
   .back { border-top: 1px solid var(--rule); padding-top: 12px; margin: 0 0 40px; }
   .back a { text-decoration: none; }
-  h1 { font-size: clamp(30px, 4.6vw, 42px); line-height: 1.1; letter-spacing: -.015em; max-width: 24ch; }
-  .meta {
-    display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 0;
+  h1 { font-size: clamp(30px, 4.6vw, 42px); line-height: 1.12; letter-spacing: -.015em; max-width: 34ch; }
+  /* Bibliographic detail sits with the links at the foot of the page, where it
+     reads as a reference rather than as a subtitle under the heading. */
+  .cite {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 48px 0 0;
+    padding-top: 16px; border-top: 1px solid var(--rule);
     font-family: var(--mono); font-size: 11.5px; letter-spacing: .05em; color: var(--faint);
   }
   .dek { font-size: 18px; color: var(--soft); max-width: 68ch; margin: 20px 0 40px; }

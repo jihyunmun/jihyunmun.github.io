@@ -65,7 +65,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 { margin: 0; text-wrap: balance; font-weight: 400; font-family: var(--serif); }
+h1, h2, h3 { margin: 0; font-weight: 400; font-family: var(--serif); }
+
+/* Headings fill each line and break where the text naturally allows. Balanced
+   wrapping evens the line lengths but puts breaks in places the sentence does
+   not want them, which reads as a mistake in long research titles. */
+h1, h2, h3, p { overflow-wrap: break-word; }
 img, video, svg { max-width: 100%; display: block; }
 a { color: inherit; }
 

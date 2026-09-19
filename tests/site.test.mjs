@@ -105,20 +105,32 @@ test('video is poster-first and never preloads', async () => {
   assert.doesNotMatch(tag, /\bautoplay\b/, 'video autoplays unconditionally');
 });
 
-test('every figure carries a caption', async () => {
+test('every figure is described for screen readers', async () => {
   const page = await html('index.html');
   const figures = page.match(/<figure[\s\S]*?<\/figure>/g) ?? [];
   assert.ok(figures.length > 0, 'no figures rendered');
   for (const f of figures) {
-    assert.match(f, /<figcaption[\s\S]*?\S[\s\S]*?<\/figcaption>/, 'figure without caption');
+    assert.match(f, /(alt|aria-label)="[^"]+"/, 'figure with no text alternative');
   }
 });
 
-test('non-published work is labelled', async () => {
-  const page = await html('research/index.html');
-  for (const label of ['Under review', 'Submitted', 'In preparation']) {
-    assert.ok(page.includes(label), `status label "${label}" never appears`);
+test('non-published work is labelled on its own page', async () => {
+  const cases = {
+    'handwriting-profiling': 'Under review',
+    'evaluation-reliability': 'Submitted',
+    'handwriting-surprise': 'In preparation',
+  };
+  for (const [slug, label] of Object.entries(cases)) {
+    const page = await html(`research/${slug}/index.html`);
+    assert.ok(page.includes(label), `/research/${slug}/ does not say "${label}"`);
   }
+});
+
+test('CC-BY data keeps its attribution somewhere on the site', async () => {
+  const hero = await html('research/handwriting-surprise/index.html');
+  assert.ok(/Zvon/.test(hero), 'DiaGraMo attribution is missing from the entry that uses it');
+  const home = await html('index.html');
+  assert.ok(/Zvon/.test(home), 'DiaGraMo attribution is missing from the page showing the clip');
 });
 
 test('landing page carries the positioning, contact and all seven cards', async () => {

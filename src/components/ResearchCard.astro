@@ -1,14 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import ResearchMedia from './ResearchMedia.astro';
-import StatusBadge from './StatusBadge.astro';
 
 interface Props {
   entry: CollectionEntry<'research'>;
   featured?: boolean;
 }
 const { entry, featured = false } = Astro.props;
-const { title, venues, status, dek, media } = entry.data;
+const { title, dek, media } = entry.data;
 const href = `/research/${entry.id}/`;
 ---
 <article class:list={['card', featured && 'featured']}>
@@ -21,10 +20,6 @@ const href = `/research/${entry.id}/`;
     />
   </a>
   <h3><a href={href}>{title}</a></h3>
-  <p class="meta">
-    {venues.map((v) => <span>{v}</span>)}
-    <StatusBadge status={status} />
-  </p>
   <p class="dek">{dek}</p>
 </article>
 
@@ -40,11 +35,6 @@ const href = `/research/${entry.id}/`;
   .featured h3 { font-size: 25px; letter-spacing: -.01em; }
   h3 a { text-decoration: none; }
   h3 a:hover { color: var(--accent); }
-  .meta {
-    display: flex; flex-wrap: wrap; gap: 10px;
-    font-family: var(--mono); font-size: 11px; letter-spacing: .05em;
-    color: var(--faint); margin: 7px 0 0;
-  }
   .dek {
     color: var(--soft);
     font-size: 14.5px;

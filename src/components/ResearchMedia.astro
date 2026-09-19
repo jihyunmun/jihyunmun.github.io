@@ -40,7 +40,6 @@ const aspect = (trueRatio ? media.ratio : undefined) ?? ratio ?? '5 / 3';
   ) : (
     <img src={media.src} alt={media.alt} loading={loading} decoding="async" />
   )}
-  <figcaption>{media.caption}</figcaption>
 </figure>
 
 <style>
@@ -62,14 +61,6 @@ const aspect = (trueRatio ? media.ratio : undefined) ?? ratio ?? '5 / 3';
     padding: 12px;
   }
 
-  figcaption {
-    font-family: var(--mono);
-    font-size: 11px;
-    line-height: 1.55;
-    color: var(--faint);
-    margin-top: 8px;
-    max-width: 78ch;
-  }
 </style>
 
 <script>

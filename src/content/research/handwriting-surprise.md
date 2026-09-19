@@ -24,3 +24,8 @@ The design choice that matters is what happens to the forecast error. Collapsing
 single score throws away the thing clinicians would actually act on. Keeping it as a
 time-aligned signal lets the model say *when* the writing stopped being automatic, which is
 a statement a clinician can check against the page.
+
+The trajectories above are from the DiaGraMo dataset — Zvončáková et al. 2026, Zenodo
+10.5281/zenodo.18299327, CC-BY-4.0. They are played at nine times speed, and stroke colour
+is pen speed from 0 to 70 mm/s. The upper writer is a control; the lower is a child with
+developmental dysgraphia.

@@ -4,13 +4,19 @@ const year = new Date().getFullYear();
 <footer class="site">
   <span>© {year} Jihyun Mun</span>
   <span>Built for keyboard, screen reader, and reduced motion.</span>
+  <span class="credit">
+    Handwriting trajectories: DiaGraMo, Zvončáková et al. 2026
+    (<a href="https://doi.org/10.5281/zenodo.18299327">Zenodo</a>, CC-BY-4.0).
+  </span>
 </footer>
 
 <style>
   footer.site {
     border-top: 1px solid var(--rule);
     margin-top: 84px; padding-block: 30px 70px;
-    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    display: flex; justify-content: space-between; gap: 10px 16px; flex-wrap: wrap;
     font-family: var(--mono); font-size: 11.5px; color: var(--faint);
   }
+  .credit { flex-basis: 100%; }
+  .credit a { color: inherit; }
 </style>

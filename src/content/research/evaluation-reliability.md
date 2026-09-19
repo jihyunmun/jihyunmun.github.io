@@ -7,10 +7,10 @@ status: submitted
 dek: "An explainable dysgraphia-detection pipeline built around unbiased evaluation and feature attribution — and a follow-up asking how much of a reported clinical result is the protocol rather than the model."
 media:
   type: image
-  src: /assets/images/research/protocol-spread.svg
-  alt: "A schematic in which one fixed dataset fans out through four protocol choices and the reported scores land at scattered positions on an unlabelled axis."
-  ratio: "640 / 400"
-  caption: "Schematic, not results: one cohort, several individually defensible protocols, and the spread in what gets reported. No values are shown — the measurements belong to work still under review."
+  src: /assets/images/research/protocol-range.png
+  alt: "Box plots across eight clinical datasets. On every one, the spread in AUC produced by changing the evaluation protocol is wider than the spread produced by changing the model."
+  ratio: "1200 / 494"
+  caption: "Across eight clinical datasets, the AUC range opened by protocol choices exceeds the range opened by model choices. Figure from the manuscript in preparation."
 ---
 
 Small clinical datasets give the analyst a great deal of freedom, and the freedom is mostly

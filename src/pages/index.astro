@@ -18,14 +18,16 @@ const links = [
 <Base title="Jihyun Mun">
   <header class="hero">
     <div>
-      <h1>Making atypical speech and handwriting measurable.</h1>
+      <h1>Making disordered signals measurable.</h1>
       <p class="role">Postdoctoral Researcher · Samovar, Télécom SudParis, Institut Polytechnique de Paris</p>
       <p class="bio">
-        I build <em>clinically reliable, interpretable</em> models for speech and handwriting
-        produced by people with disorders, diseases and disabilities — chronic kidney disease,
-        autism spectrum disorder, developmental dysgraphia. The work runs from corpus design and
-        acoustic or kinematic analysis through modelling to the evaluation protocols that decide
-        whether a clinical result is real.
+        I build deep-learning models for signals produced under disorder, disease and
+        disability — speech and handwriting so far, and any biosignal that carries the same
+        evidence. Modelling is half of it. The other half is the <em>explainability</em> that
+        lets a clinician see what the model actually responded to, and the
+        <em>evaluation</em> that decides whether the number means anything outside the
+        paper it appeared in. The work runs end to end: corpus design, representation
+        learning, modelling, explanation, validation.
       </p>
       <p class="links">
         {links.map((l) => <a href={l.href}>{l.label}</a>)}
@@ -52,9 +54,10 @@ const links = [
     .hero { grid-template-columns: 1fr; padding-block: 52px 36px; }
   }
   h1 { font-size: clamp(38px, 6.4vw, 60px); line-height: 1.04; letter-spacing: -.02em; }
+  /* Descriptive text, so it takes the body face. Mono is reserved for things
+     you navigate by: links, labels, dates, identifiers. */
   .role {
-    font-family: var(--mono); font-size: 13px; letter-spacing: .04em;
-    color: var(--accent); margin: 18px 0 0;
+    font-size: 15px; color: var(--accent); margin: 18px 0 0;
   }
   .bio { max-width: 62ch; color: var(--soft); margin: 18px 0 0; font-size: 17px; }
   .bio em { color: var(--ink); font-style: normal; }
