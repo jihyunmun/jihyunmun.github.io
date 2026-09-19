@@ -192,3 +192,20 @@ test('CV page matches the PDF and attributes software rights correctly', async (
   const projects = (page.match(/class="funder"/g) ?? []).length;
   assert.ok(projects >= 7 + 1 + 2, `expected 7 projects + 1 patent + 2 registrations, found ${projects} annotated rows`);
 });
+
+test('old URLs redirect to their new homes', async () => {
+  const map = {
+    'about': '/',
+    'projects': '/cv/',
+    'patents': '/cv/',
+    'education': '/cv/',
+    'autism': '/research/asd-severity/',
+    'ckd': '/research/ckd-speech/',
+  };
+  for (const [from, to] of Object.entries(map)) {
+    const page = await html(`${from}/index.html`);
+    assert.match(page, new RegExp(`http-equiv="refresh"[^>]*url=${to.replace(/\//g, '\\/')}`),
+      `/${from}/ does not refresh to ${to}`);
+    assert.ok(page.includes(`href="${to}"`), `/${from}/ has no visible link to ${to}`);
+  }
+});
