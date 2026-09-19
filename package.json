@@ -1,0 +1,22 @@
+{
+  "name": "jihyunmun-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "astro build && node --test tests/",
+    "encode-media": "bash scripts/encode-media.sh"
+  },
+  "dependencies": {
+    "astro": "^7.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  }
+}
