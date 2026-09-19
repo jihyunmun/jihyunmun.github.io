@@ -1,0 +1,99 @@
+---
+interface Media {
+  type: 'video' | 'image';
+  src: string;
+  webm?: string;
+  poster?: string;
+  alt: string;
+  caption: string;
+  ratio?: string;
+}
+interface Props {
+  media: Media;
+  ratio?: string;
+  loading?: 'eager' | 'lazy';
+}
+const { media, ratio, loading = 'lazy' } = Astro.props;
+// The figure's own aspect wins: a paper figure letterboxed inside a card
+// ratio reads as a mistake. The card ratio is only the fallback.
+const aspect = media.ratio ?? ratio ?? '5 / 3';
+---
+<figure class:list={['media', media.type === 'image' && 'plate']} style={`--ratio: ${aspect}`}>
+  {media.type === 'video' ? (
+    <video
+      class="js-clip"
+      poster={media.poster}
+      aria-label={media.alt}
+      muted
+      loop
+      playsinline
+      preload="none"
+      tabindex="0"
+    >
+      {media.webm && <source src={media.webm} type="video/webm" />}
+      <source src={media.src} type="video/mp4" />
+    </video>
+  ) : (
+    <img src={media.src} alt={media.alt} loading={loading} decoding="async" />
+  )}
+  <figcaption>{media.caption}</figcaption>
+</figure>
+
+<style>
+  .media { margin: 0; }
+  .media > video,
+  .media > img {
+    width: 100%;
+    aspect-ratio: var(--ratio);
+    object-fit: contain;
+    border: 1px solid var(--rule);
+  }
+  .media > video { background: var(--well); }
+
+  /* Scientific figures keep their own colour space in both themes. Inverting
+     them would change what the colours mean, so they sit on a fixed plate
+     instead — the way a printed figure sits on a page. */
+  .media.plate > img {
+    background: #FFFFFF;
+    padding: 12px;
+  }
+
+  figcaption {
+    font-family: var(--mono);
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--faint);
+    margin-top: 8px;
+    max-width: 78ch;
+  }
+</style>
+
+<script>
+  // Plays only on intent: hover or focus on a pointer device, one pass into
+  // view on touch. Never plays when the visitor asked for reduced motion.
+  const calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+  for (const clip of document.querySelectorAll<HTMLVideoElement>('video.js-clip')) {
+    if (calm.matches) continue;
+
+    const play = () => { clip.play().catch(() => {}); };
+    const stop = () => { clip.pause(); clip.currentTime = 0; };
+
+    if (fine.matches) {
+      clip.addEventListener('mouseenter', play);
+      clip.addEventListener('focus', play);
+      clip.addEventListener('mouseleave', stop);
+      clip.addEventListener('blur', stop);
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (!e.isIntersecting) continue;
+          play();
+          io.unobserve(e.target);
+        }
+      }, { threshold: 0.5 });
+      io.observe(clip);
+    }
+  }
+</script>

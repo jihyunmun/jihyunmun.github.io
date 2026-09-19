@@ -91,3 +91,25 @@ test('nothing withheld leaks into content', async () => {
     }
   }
 });
+
+test('video is poster-first and never preloads', async () => {
+  const page = await html('index.html');
+  const video = page.match(/<video[^>]*>/);
+  assert.ok(video, 'no <video> element rendered');
+  const tag = video[0];
+  assert.match(tag, /\bmuted\b/, 'video is not muted');
+  assert.match(tag, /\bplaysinline\b/, 'video is missing playsinline');
+  assert.match(tag, /\bloop\b/, 'video is not looping');
+  assert.match(tag, /preload="none"/, 'video preloads');
+  assert.match(tag, /poster="[^"]+"/, 'video has no poster');
+  assert.doesNotMatch(tag, /\bautoplay\b/, 'video autoplays unconditionally');
+});
+
+test('every figure carries a caption', async () => {
+  const page = await html('index.html');
+  const figures = page.match(/<figure[\s\S]*?<\/figure>/g) ?? [];
+  assert.ok(figures.length > 0, 'no figures rendered');
+  for (const f of figures) {
+    assert.match(f, /<figcaption[\s\S]*?\S[\s\S]*?<\/figcaption>/, 'figure without caption');
+  }
+});

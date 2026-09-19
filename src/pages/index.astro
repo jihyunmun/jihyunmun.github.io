@@ -1,6 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
+import ResearchMedia from '../components/ResearchMedia.astro';
+import { getEntry } from 'astro:content';
+
+const featured = await getEntry('research', 'handwriting-surprise');
+if (!featured) throw new Error('handwriting-surprise entry missing');
 ---
 <Base title="Jihyun Mun">
   <h1>Jihyun Mun</h1>
+  <ResearchMedia media={featured.data.media} ratio="16 / 7" loading="eager" />
 </Base>
